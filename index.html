@@ -1,84 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Warhammer  40K: Blood and Thunder</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+    <title>Warhammer 40K: Blood and Thunder</title>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
     <header>
         <nav class="nav">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="teams.html">Teams</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li class="dropdown">
+                    <a href="teams.html">Teams</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="productionteam.html">Production</a></li>
+                        <li><a href="artteam.html">Art</a></li>
+                        <li><a href="codeteam.html">Code</a></li>
+                        <li><a href="designteam.html">Design</a></li>
+                    </ul>
+                </li>
+
                 <li><a href="engine.html">Engine</a></li>
                 <li><a href="production.html">Production</a></li>
                 <li><a href="lore.html">Lore</a></li>
-                <li><a href="https://github.com/MarcoDiModica/HawkEngine_Warhammer40K" target="_blank" rel="noopener">Engineson Link</a></li>
+                <li>
+                    <a href="https://github.com/MarcoDiModica/HawkEngine_Warhammer40K"
+                       target="_blank"
+                       rel="noopener">Engineson Link</a>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Warhammer  40K: Blood and Thunder</h1>
-            <p>Download now and conquer the evil tyranids.</p>
-            <a href="linkdedescarga" class="btn">Download</a>
-        </div>
-    </section>
-
-    <section id="features" class="section">
-        <h2>Game Features</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="images/placeholder1.png" alt="Feature 1">
-                <h3>Epic Battles</h3>
-                <p>Cosas de batallas epicas</p>
+    <main>
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-text">
+                    <h1>Warhammer 40K: Blood and Thunder</h1>
+                    <p>Download now and conquer the evil Tyranids.</p>
+                    <a href="#" class="btn">Download</a>
+                </div>
+                <div class="hero-image"></div>
             </div>
-            <div class="card">
-                <img src="images/placeholder2.png" alt="Feature 2">
-                <h3>Resource management</h3>
-                <p>Te quedas sin balas y sin vida y la palmas</p>
+        </section>
+        <section class="description">
+            <div class="container desc-container">
+                <div class="desc-text">
+                    <h2>Game Features</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                        ultricies, purus vitae elementum commodo, libero nulla vulputate
+                        risus, nec malesuada lacus turpis non purus.
+                    </p>
+                    <h3>Features</h3>
+                    <ol class="features-list">
+                        <li>Epic Battles</li>
+                        <li>Resource Management</li>
+                        <li>Rich Lore</li>
+                    </ol>
+                </div>
+                <div class="desc-image"></div>
             </div>
-            <div class="card">
-                <img src="images/placeholder3.png" alt="Feature 3">
-                <h3>Rich Lore</h3>
-                <p>Mucho lore escrito por el design lead Jordi Tur</p>
+        </section>
+        <section id="trailer" class="trailer">
+            <div class="container trailer-container">
+                <h2>Official Trailer</h2>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/5zcJKGdb0a8"
+                            title="Game Trailer"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+        <section class="cards">
+            <div class="container cards-container">
+                <div class="card" id="team-card">
+                    <h3>The Team</h3>
+                    <a href="teams.html" class="card-btn">Crucible</a>
+                </div>
+                <div class="card" id="engine-card">
+                    <h3>The Engine</h3>
+                    <a href="engine.html" class="card-btn">Engineson</a>
+                </div>
+                <div class="card" id="lore-card">
+                    <h3>The Lore</h3>
+                    <a href="lore.html" class="card-btn">Blood &amp; Thunder</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <img src="https://via.placeholder.com/60x60?text=Logo"
+                     alt="Small Logo" />
+            </div>
+            <div class="footer-links">
+                <a href="#"><img src="icons/twitter.svg" alt="Twitter" /></a>
+                <a href="#"><img src="icons/instagram.svg" alt="Instagram" /></a>
+                <a href="#"><img src="icons/discord.svg" alt="Discord" /></a>
+            </div>
+            <div class="footer-copy">
+                &copy; 2025 Warhammer 40K: Blood and Thunder. All rights reserved.
             </div>
         </div>
-    </section>
-
-    <section class="section alt">
-        <h2>Otra seccion</h2>
-        <ul class="faction-list">
-            <li><img src="images/placeholder1.png" alt="Imagen"><span>Aqui</span></li>
-            <li><img src="images/placeholder2.png" alt="Imagen"><span>Escribes</span></li>
-            <li><img src="images/placeholder3.png" alt="Imagen"><span>Cosas</span></li>
-        </ul>
-    </section>
-
-    <section id="trailer" class="section">
-        <h2>Official Trailer</h2>
-        <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/5zcJKGdb0a8"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-            </iframe>
-        </div>
-    </section>
-
-    <footer id="contact" class="footer">
-        <h2>Stay Connected</h2>
-        <ul class="social">
-            <li><a href="#"><img src="icons/twitter.svg" alt="Twitter"></a></li>
-            <li><a href="#"><img src="icons/instagram.svg" alt="Instagram"></a></li>
-            <li><a href="#"><img src="icons/discord.svg" alt="Discord"></a></li>
-        </ul>
-        <p>© 2025 Warhammer 40K: Blood and Thunder. All rights reserved.</p>
     </footer>
-
-    <script src="js/main.js"></script>
 </body>
 </html>

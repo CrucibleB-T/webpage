@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+    <title>Warhammer 40K: Blood &amp; Thunder — Name Surname</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+    /* ───────────────────────────────────────────────────────────────────────────
+       If you want, you can move these into css/style.css.
+       They cover the “profile page” specific sections.
+    ─────────────────────────────────────────────────────────────────────────── */
+    /* 1) Profile Header (top box with photo, name, role, links) */
+    .profile-header {
+      background-color: #ffffff;
+      padding: 2rem 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    .profile-header .profile-container {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .profile-photo {
+      flex: 0 0 150px;
+      width: 150px;
+      height: 150px;
+      background-color: #ddd; /* fallback color */
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .profile-info {
+      flex: 1 1 300px;
+    }
+    .profile-info h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .profile-info p.role {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+    .profile-links a {
+      display: inline-block;
+      margin-right: 0.75rem;
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .profile-links a:hover {
+      color: #0056b3;
+    }
+
+    /* 2) Tasks Done Section (grid of “task cards” or a dropdown if you prefer) */
+    .tasks-section {
+      background-color: #fafafa;
+      padding: 2rem 1rem;
+      margin-bottom: 2rem;
+    }
+    .tasks-section .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: #222;
+    }
+    .tasks-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .task-card {
+      background-color: #fff;
+      border-radius: 8px;
+      width: 200px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .task-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    .task-card .task-icon {
+      background-color: #ddd; /* fallback if no icon image */
+      width: 100%;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .task-card .task-icon img {
+      max-width: 80px;
+      max-height: 80px;
+    }
+    .task-card .task-content {
+      padding: 1rem;
+      text-align: center;
+    }
+    .task-card .task-content h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #222;
+    }
+    .task-card .task-content p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* If you prefer a collapsible dropdown for each task instead of a card:
+       .task-dropdown { … }  You can replace .tasks-grid/.task-card with that. */
+
+    /* 3) Experience & Competencies Section */
+    .experience-section {
+      background-color: #fff;
+      padding: 2rem 1rem;
+      margin-bottom: 2rem;
+    }
+    .experience-section .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: #222;
+    }
+    .experience-list {
+      list-style: none;
+      max-width: 800px;
+      margin: 0 auto;
+      padding-left: 1rem;
+    }
+    .experience-list li {
+      position: relative;
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      color: #444;
+    }
+    .experience-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.2rem;
+      color: #007bff;
+    }
+
+    /* 4) Responsive adjustments for profile page sections */
+    @media (max-width: 768px) {
+      .profile-header .profile-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .tasks-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .experience-list {
+        padding-left: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="teams.html">Teams</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="productionteam.html">Production</a></li>
+                        <li><a href="artteam.html" class="active">Art</a></li>
+                        <li><a href="codeteam.html">Code</a></li>
+                        <li><a href="designteam.html">Design</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="engine.html">Engine</a></li>
+                <li><a href="production.html">Production</a></li>
+                <li><a href="lore.html">Lore</a></li>
+                <li>
+                    <a href="https://github.com/MarcoDiModica/HawkEngine_Warhammer40K"
+                       target="_blank"
+                       rel="noopener">Engineson Link</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="profile-header">
+        <div class="container profile-container">
+            <div class="profile-photo">
+                <img src="https://via.placeholder.com/150" alt="Name Surname Photo" />
+            </div>
+            <div class="profile-info">
+                <h1>Name Surname</h1>
+
+                <p class="role">Role Title</p>
+                <div class="profile-links">
+                    <a href="mailto:name@example.com">Email</a>
+                    <a href="https://linkedin.com/in/namesurname" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/username" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="tasks-section">
+        <div class="container">
+            <h2 class="section-title">Tasks &amp; Responsibilities</h2>
+            <div class="tasks-grid">
+                <div class="task-card">
+                    <div class="task-icon">
+                        <img src="https://via.placeholder.com/64" alt="Icon" />
+                    </div>
+                    <div class="task-content">
+                        <h3>Feature A</h3>
+                        <p>
+                            Brief description of what this person implemented or owned
+                            (e.g. “Built the level streaming system”).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-icon">
+                        <img src="https://via.placeholder.com/64" alt="Icon" />
+                    </div>
+                    <div class="task-content">
+                        <h3>Feature B</h3>
+                        <p>
+                            Another responsibility (e.g. “Optimized asset pipeline and
+                            build times”).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-icon">
+                        <img src="https://via.placeholder.com/64" alt="Icon" />
+                    </div>
+                    <div class="task-content">
+                        <h3>Feature C</h3>
+                        <p>
+                            “Designed scoreboard UI and implemented live updates” (for
+                            example).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-icon">
+                        <img src="https://via.placeholder.com/64" alt="Icon" />
+                    </div>
+                    <div class="task-content">
+                        <h3>Feature D</h3>
+                        <p>
+                            “Managed QA pipeline and release verification” (whatever fits).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="experience-section">
+        <div class="container">
+            <h2 class="section-title">Experience &amp; Competencies</h2>
+            <ul class="experience-list">
+                <li>5+ years in game production and pipeline management</li>
+                <li>Proficient with Unreal Engine 5, Perforce, and Jenkins</li>
+                <li>Strong organization skills—coordinated 20+ milestone releases</li>
+                <li>Experience leading a team of 4 build engineers and QA staff</li>
+                <li>Excellent communication skills, bridging devs & stakeholders</li>
+            </ul>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <img src="https://via.placeholder.com/60x60?text=Logo"
+                     alt="Small Logo" />
+            </div>
+            <div class="footer-links">
+                <a href="#"><img src="icons/twitter.svg" alt="Twitter" /></a>
+                <a href="#"><img src="icons/instagram.svg" alt="Instagram" /></a>
+                <a href="#"><img src="icons/discord.svg" alt="Discord" /></a>
+            </div>
+            <div class="footer-copy">
+                &copy; 2025 Warhammer 40K: Blood and Thunder. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

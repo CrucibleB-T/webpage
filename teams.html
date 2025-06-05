@@ -1,24 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warhammer 40K: Blood and Thunder - Teams</title>
-    <link rel="stylesheet" href="css/style.css"
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+    <title>Warhammer 40K: Blood and Thunder — Teams</title>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
     <header>
         <nav class="nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="teams.html">Teams</a></li>
+
+                <li class="dropdown">
+                    <a href="teams.html" class="active">Teams</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="productionteam.html">Production</a></li>
+                        <li><a href="artteam.html">Art</a></li>
+                        <li><a href="codeteam.html">Code</a></li>
+                        <li><a href="designteam.html">Design</a></li>
+                    </ul>
+                </li>
+
                 <li><a href="engine.html">Engine</a></li>
                 <li><a href="production.html">Production</a></li>
                 <li><a href="lore.html">Lore</a></li>
-                <li><a href="https://github.com/MarcoDiModica/HawkEngine_Warhammer40K" target="_blank" rel="noopener">Engineson Link</a></li>
+                <li>
+                    <a href="https://github.com/MarcoDiModica/HawkEngine_Warhammer40K"
+                       target="_blank"
+                       rel="noopener">Engineson Link</a>
+                </li>
             </ul>
         </nav>
     </header>
 
+    <main>
+        <section class="teams-overview">
+            <div class="container">
+                <h1 class="section-title">Our Teams</h1>
+                <p class="section-subtitle">
+                    Click on a team to view its members, mission statement, and more.
+                </p>
+
+                <div class="teams-grid">
+                    <a href="productionteam.html" class="team-card" id="production-team">
+                        <div class="team-card-content">
+                            <h2>Production</h2>
+                            <p>Oversee schedules, manage the team and lead.</p>
+                        </div>
+                    </a>
+                    <a href="artteam.html" class="team-card" id="art-team">
+                        <div class="team-card-content">
+                            <h2>Art</h2>
+                            <p>Concept artists, 3D modelers & visual effects.</p>
+                        </div>
+                    </a>
+                    <a href="codeteam.html" class="team-card" id="code-team">
+                        <div class="team-card-content">
+                            <h2>Code</h2>
+                            <p>Gameplay engineers, feature programmers & engine devs.</p>
+                        </div>
+                    </a>
+                    <a href="designteam.html" class="team-card" id="design-team">
+                        <div class="team-card-content">
+                            <h2>Design</h2>
+                            <p>Level design, UX/UI & balancing specialists.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <img src="https://via.placeholder.com/60x60?text=Logo"
+                     alt="Small Logo" />
+            </div>
+            <div class="footer-links">
+                <a href="#"><img src="icons/twitter.svg" alt="Twitter" /></a>
+                <a href="#"><img src="icons/instagram.svg" alt="Instagram" /></a>
+                <a href="#"><img src="icons/discord.svg" alt="Discord" /></a>
+            </div>
+            <div class="footer-copy">
+                &copy; 2025 Warhammer 40K: Blood and Thunder. All rights reserved.
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
