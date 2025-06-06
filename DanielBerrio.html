@@ -78,31 +78,49 @@
       color: #222;
     }
     .tasks-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+        align-items: center;
     }
     .task-card {
-      background-color: #fff;
-      border-radius: 8px;
-      width: 200px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
+        background-color: #fff;
+        border-radius: 8px;
+        flex: 0 0 200px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        overflow: hidden;
+        transition: transform 0.2s, box-shadow 0.2s;
     }
+
+    .task-card.large {
+        /* Example: make large cards twice as wide (400px) */
+        flex: 0 0 400px;
+        /* If you’d rather have it take 100% of the container’s width, use:
+    flex: 0 0 100%;
+    max-width: 100%;
+*/
+    }
+
     .task-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
+
     .task-card .task-icon {
-      background-color: #ddd; /* fallback if no icon image */
-      width: 100%;
-      height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+        background-color: #ddd; /* fallback if no icon image */
+        width: 100%;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        object-fit: contain;
     }
+
+    .task-card.large .task-icon {
+        height: 350px; /* increase height if you need more vertical space */
+    }
+
     .task-card .task-icon img {
       max-width: 80px;
       max-height: 80px;
@@ -205,9 +223,9 @@
                 <img src="https://via.placeholder.com/150" alt="Name Surname Photo" />
             </div>
             <div class="profile-info">
-                <h1>Name Surname</h1>
+                <h1>Daniel Berrio</h1>
 
-                <p class="role">Role Title</p>
+                <p class="role">Environment Artist</p>
                 <div class="profile-links">
                     <a href="mailto:name@example.com">Email</a>
                     <a href="https://linkedin.com/in/namesurname" target="_blank">LinkedIn</a>
@@ -220,9 +238,12 @@
         <div class="container">
             <h2 class="section-title">Tasks &amp; Responsibilities</h2>
             <div class="tasks-grid">
-                <div class="task-card">
+                <div class="task-card large">
                     <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
+                        <model-viewer camera-controls touch-action="pan-y" disable-zoom autoplay ar ar-modes="webxr scene-viewer"
+                                      scale="0.5 0.5 0.5" shadow-intensity="1" src="assets/glb/Dani/Armagedon.glb"
+                                      alt="An animated 3D model of a robot" style="height:600px; width:100%">
+                        </model-viewer>
                     </div>
                     <div class="task-content">
                         <h3>Feature A</h3>
@@ -235,7 +256,10 @@
 
                 <div class="task-card">
                     <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
+                        <model-viewer camera-controls touch-action="pan-y" disable-zoom autoplay ar ar-modes="webxr scene-viewer"
+                                      scale="2 2 2" shadow-intensity="1" src="Assets/glb/Dani/Medkit.glb"
+                                      alt="An animated 3D model of a robot" style="height:600px; width:50%">
+                        </model-viewer>
                     </div>
                     <div class="task-content">
                         <h3>Feature B</h3>
@@ -248,7 +272,10 @@
 
                 <div class="task-card">
                     <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
+                        <model-viewer camera-controls touch-action="pan-y" disable-zoom autoplay ar ar-modes="webxr scene-viewer"
+                                      scale="2 2 2" shadow-intensity="1" src="Assets/glb/Dani/AmmoBox.glb"
+                                      alt="An animated 3D model of a robot" style="height:600px; width:50%">
+                        </model-viewer>
                     </div>
                     <div class="task-content">
                         <h3>Feature C</h3>
@@ -259,9 +286,110 @@
                     </div>
                 </div>
 
-                <div class="task-card">
+                <div class="task-card large">
                     <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
+                        <model-viewer camera-controls touch-action="pan-y" disable-zoom autoplay ar ar-modes="webxr scene-viewer"
+                                      scale="2 2 2" shadow-intensity="1" src="Assets/glb/Dani/Missile.glb"
+                                      alt="An animated 3D model of a robot" style="height:600px; width:30%">
+                        </model-viewer>
+                    </div>
+                    <div class="task-content">
+                        <h3>Feature D</h3>
+                        <p>
+                            “Managed QA pipeline and release verification” (whatever fits).
+                        </p>
+                    </div>
+                </div>
+                <div class="task-card large">
+                    <div class="task-icon">
+                        <model-viewer camera-controls touch-action="pan-y" disable-zoom autoplay ar ar-modes="webxr scene-viewer"
+                                      scale="4 4 4" shadow-intensity="1" src="Assets/glb/Dani/ModularBridgeWall.glb"
+                                      alt="An animated 3D model of a robot" style="height:600px; width:100%">
+                        </model-viewer>
+                    </div>
+                    <div class="task-content">
+                        <h3>Feature D</h3>
+                        <p>
+                            “Managed QA pipeline and release verification” (whatever fits).
+                        </p>
+                    </div>
+                </div>
+                <div class="task-card large">
+                    <div class="task-icon">
+                        <model-viewer camera-controls touch-action="pan-y" disable-zoom autoplay ar ar-modes="webxr scene-viewer"
+                                      scale="2 2 2" shadow-intensity="1" src="Assets/glb/Dani/ModularCityBuilding.glb"
+                                      alt="An animated 3D model of a robot" style="height:600px; width:100%">
+                        </model-viewer>
+                    </div>
+                    <div class="task-content">
+                        <h3>Feature D</h3>
+                        <p>
+                            “Managed QA pipeline and release verification” (whatever fits).
+                        </p>
+                    </div>
+                </div>
+                <div class="task-card large">
+                    <div class="task-icon">
+                        <model-viewer camera-controls touch-action="pan-y" disable-zoom autoplay ar ar-modes="webxr scene-viewer"
+                                      scale="2 2 2" shadow-intensity="1" src="Assets/glb/Dani/ModularSpaceShip.glb"
+                                      alt="An animated 3D model of a robot" style="height:600px; width:100%">
+                        </model-viewer>
+                    </div>
+                    <div class="task-content">
+                        <h3>Feature D</h3>
+                        <p>
+                            “Managed QA pipeline and release verification” (whatever fits).
+                        </p>
+                    </div>
+                </div>
+                <div class="task-card large">
+                    <div class="task-icon">
+                        <model-viewer camera-controls touch-action="pan-y" disable-zoom autoplay ar ar-modes="webxr scene-viewer"
+                                      scale="2 2 2" shadow-intensity="1" src="Assets/glb/Dani/RuinedHouse1.glb"
+                                      alt="An animated 3D model of a robot" style="height:600px; width:100%">
+                        </model-viewer>
+                    </div>
+                    <div class="task-content">
+                        <h3>Feature D</h3>
+                        <p>
+                            “Managed QA pipeline and release verification” (whatever fits).
+                        </p>
+                    </div>
+                </div>
+                <div class="task-card large">
+                    <div class="task-icon">
+                        <model-viewer camera-controls touch-action="pan-y" disable-zoom autoplay ar ar-modes="webxr scene-viewer"
+                                      scale="2 2 2" shadow-intensity="1" src="Assets/glb/Dani/RuinedHouse2.glb"
+                                      alt="An animated 3D model of a robot" style="height:600px; width:100%">
+                        </model-viewer>
+                    </div>
+                    <div class="task-content">
+                        <h3>Feature D</h3>
+                        <p>
+                            “Managed QA pipeline and release verification” (whatever fits).
+                        </p>
+                    </div>
+                </div>
+                <div class="task-card large">
+                    <div class="task-icon">
+                        <model-viewer camera-controls touch-action="pan-y" disable-zoom autoplay ar ar-modes="webxr scene-viewer"
+                                      scale="2 2 2" shadow-intensity="1" src="Assets/glb/Dani/Statue.glb"
+                                      alt="An animated 3D model of a robot" style="height:600px; width:50%">
+                        </model-viewer>
+                    </div>
+                    <div class="task-content">
+                        <h3>Feature D</h3>
+                        <p>
+                            “Managed QA pipeline and release verification” (whatever fits).
+                        </p>
+                    </div>
+                </div>
+                <div class="task-card large">
+                    <div class="task-icon">
+                        <model-viewer camera-controls touch-action="pan-y" disable-zoom autoplay ar ar-modes="webxr scene-viewer"
+                                      scale="2 2 2" shadow-intensity="1" src="Assets/glb/Dani/Tent.glb"
+                                      alt="An animated 3D model of a robot" style="height:600px; width:100%">
+                        </model-viewer>
                     </div>
                     <div class="task-content">
                         <h3>Feature D</h3>
@@ -303,3 +431,5 @@
     </footer>
 </body>
 </html>
+
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>

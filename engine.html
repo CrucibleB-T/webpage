@@ -1,24 +1,295 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warhammer 40K: Blood and Thunder - Engine</title>
-    <link rel="stylesheet" href="css/style.css"
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+    <title>Warhammer 40K: Blood and Thunder — The Engine</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+         /* ================================
+        ENGINE-PAGE–SPECIFIC STYLES
+        (You can move these into css/style.css if you prefer)
+        ================================ */
+
+         /* 1) Hero / Banner for "The Engine" */
+         .engine-hero {
+             background-color: #ececec; /* fallback color */
+             /* Once you have a background image:
+          background-image: url("../images/engine-banner.jpg");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat; */
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             height: calc(60vh - 60px); /* subtract header height */
+             text-align: center;
+             padding: 0 1rem;
+         }
+
+             .engine-hero .engine-content {
+                 max-width: 800px;
+             }
+
+             .engine-hero h1 {
+                 font-size: 3rem;
+                 margin-bottom: 1rem;
+                 color: #222;
+             }
+
+             .engine-hero p {
+                 font-size: 1.2rem;
+                 margin-bottom: 1.5rem;
+                 color: #555;
+             }
+
+             .engine-hero .btn {
+                 padding: 0.75rem 1.5rem;
+             }
+
+         /* 2) Features Section */
+         .engine-features {
+             background-color: #f9f9f9;
+             padding: 3rem 0;
+         }
+
+             .engine-features .section-title {
+                 text-align: center;
+                 font-size: 2rem;
+                 margin-bottom: 2rem;
+                 color: #222;
+             }
+
+         .features-grid {
+             display: flex;
+             flex-wrap: wrap;
+             gap: 2rem;
+             justify-content: center;
+         }
+
+         .feature-card {
+             flex: 1 1 260px;
+             max-width: 300px;
+             background-color: #fff;
+             border-radius: 8px;
+             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+             overflow: hidden;
+             transition: transform 0.2s, box-shadow 0.2s;
+         }
+
+             .feature-card:hover {
+                 transform: translateY(-4px);
+                 box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+             }
+
+             .feature-card .feature-icon {
+                 background-color: #ddd;
+                 width: 100%;
+                 height: 160px;
+                 display: flex;
+                 align-items: center;
+                 justify-content: center;
+             }
+
+                 .feature-card .feature-icon img {
+                     max-width: 80px;
+                     max-height: 80px;
+                 }
+
+             .feature-card .feature-content {
+                 padding: 1.5rem;
+                 text-align: center;
+             }
+
+                 .feature-card .feature-content h3 {
+                     font-size: 1.25rem;
+                     margin-bottom: 0.5rem;
+                     color: #222;
+                 }
+
+                 .feature-card .feature-content p {
+                     font-size: 1rem;
+                     color: #555;
+                 }
+
+         /* 3) Libraries Section (grid of small icons) */
+         .engine-libraries {
+             background-color: #fff;
+             padding: 3rem 0;
+         }
+
+             .engine-libraries .section-title {
+                 text-align: center;
+                 font-size: 2rem;
+                 margin-bottom: 2rem;
+                 color: #222;
+             }
+
+         .libraries-grid {
+             display: grid;
+             grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+             gap: 1.5rem;
+             justify-items: center;
+             align-items: center;
+             max-width: 900px;
+             margin: 0 auto;
+             padding: 0 1rem;
+         }
+
+         .library-icon {
+             width: 64px;
+             height: 64px;
+             background-color: #eee;
+             border-radius: 8px;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             transition: background-color 0.2s;
+         }
+
+             .library-icon img {
+                 max-width: 40px;
+                 max-height: 40px;
+             }
+
+             .library-icon:hover {
+                 background-color: #ddd;
+             }
+
+         @media (max-width: 768px) {
+             .engine-hero h1 {
+                 font-size: 2.5rem;
+             }
+
+             .feature-card, .libraries-grid {
+                 max-width: 100%;
+             }
+         }
+    </style>
 </head>
 <body>
     <header>
         <nav class="nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="teams.html">Teams</a></li>
-                <li><a href="engine.html">Engine</a></li>
+
+                <li class="dropdown">
+                    <a href="teams.html">Teams</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="productionteam.html">Production</a></li>
+                        <li><a href="artteam.html">Art</a></li>
+                        <li><a href="codeteam.html">Code</a></li>
+                        <li><a href="designteam.html">Design</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="engine.html" class="active">Engine</a></li>
                 <li><a href="production.html">Production</a></li>
                 <li><a href="lore.html">Lore</a></li>
-                <li><a href="https://github.com/MarcoDiModica/HawkEngine_Warhammer40K" target="_blank" rel="noopener">Engineson Link</a></li>
+                <li>
+                    <a href="https://github.com/MarcoDiModica/HawkEngine_Warhammer40K"
+                       target="_blank"
+                       rel="noopener">Engineson Link</a>
+                </li>
             </ul>
         </nav>
     </header>
-
+    <main>
+        <section class="engine-hero">
+            <div class="engine-content">
+                <h1>Hawk Engine</h1>
+                <p>
+                    Bla bla bla ble ble ble
+                </p>
+                <a href="https://github.com/MarcoDiModica/HawkEngine_Warhammer40K" class="btn">Download Engine SDK</a>
+            </div>
+        </section>
+        <section class="engine-features">
+            <div class="container">
+                <h2 class="section-title">Engine Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="icons/performance.svg" alt="High Performance Icon" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Titulo</h3>
+                            <p>
+                                Bla bla bla ble ble ble
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="icons/graphics.svg" alt="Advanced Graphics Icon" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Titulo</h3>
+                            <p>
+                                Bla bla bla ble ble ble
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="icons/network.svg" alt="Robust Networking Icon" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Titulo</h3>
+                            <p>
+                                Bla bla bla ble ble ble
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="engine-libraries">
+            <div class="container">
+                <h2 class="section-title">Libraries &amp; Middleware</h2>
+                <p style="text-align: center; margin-bottom: 1.5rem; color: #555;">
+                    We leverage best‐in‐class open‐source libraries and plugins to accelerate
+                    development and ensure stability:
+                </p>
+                <div class="libraries-grid">
+                    <div class="library-icon">
+                        <img src="icons/entt.svg" alt="EnTT Library" />
+                    </div>
+                    <div class="library-icon">
+                        <img src="icons/physx.svg" alt="NVIDIA PhysX" />
+                    </div>
+                    <div class="library-icon">
+                        <img src="icons/assimp.svg" alt="Assimp" />
+                    </div>
+                    <div class="library-icon">
+                        <img src="icons/imgui.svg" alt="Dear ImGui" />
+                    </div>
+                    <div class="library-icon">
+                        <img src="icons/spdlog.svg" alt="spdlog" />
+                    </div>
+                    <div class="library-icon">
+                        <img src="icons/glfw.svg" alt="GLFW" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <img src="https://via.placeholder.com/60x60?text=Logo"
+                     alt="Small Logo" />
+            </div>
+            <div class="footer-links">
+                <a href="#"><img src="icons/twitter.svg" alt="Twitter" /></a>
+                <a href="#"><img src="icons/instagram.svg" alt="Instagram" /></a>
+                <a href="#"><img src="icons/discord.svg" alt="Discord" /></a>
+            </div>
+            <div class="footer-copy">
+                &copy; 2025 Warhammer 40K: Blood and Thunder. All rights reserved.
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

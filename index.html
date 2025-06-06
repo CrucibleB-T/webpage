@@ -6,8 +6,230 @@
           content="width=device-width, initial-scale=1.0" />
     <title>Warhammer 40K: Blood and Thunder</title>
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+            /* ================================
+           PAGE‐SPECIFIC STYLES FOR index.html
+           ================================ */
+
+            /* 1) HERO SECTION
+           - Full‐width background image
+           - Centered text and button
+        */
+            .hero {
+                position: relative;
+                width: 100%;
+                height: calc(80vh - 60px); /* leave room for 60px header */
+                background-image: url("https://via.placeholder.com/1600x900?text=Hero+Background");
+                background-size: cover;
+                background-position: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                color: #fff;
+            }
+
+                .hero::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.6); /* dark overlay for readability */
+                    z-index: 0;
+                }
+
+            .hero-content {
+                position: relative;
+                z-index: 1;
+                max-width: 800px;
+                padding: 0 1rem;
+            }
+
+                .hero-content h1 {
+                    font-size: 3rem;
+                    margin-bottom: 1rem;
+                }
+
+                .hero-content p {
+                    font-size: 1.25rem;
+                    margin-bottom: 1.5rem;
+                }
+
+                .hero-content .btn {
+                    padding: 0.75rem 1.5rem;
+                    background: #d32f2f;
+                    color: #fff;
+                    border-radius: 4px;
+                    font-weight: 500;
+                    transition: background-color 0.2s;
+                }
+
+                    .hero-content .btn:hover {
+                        background: #b71c1c;
+                    }
+
+            /* 2) PILLARS SECTION
+           - Four cards in a row (wrap on mobile)
+        */
+            .pillars {
+                background-color: #f9f9f9;
+                padding: 3rem 1rem;
+            }
+
+                .pillars .section-title {
+                    text-align: center;
+                    font-size: 2rem;
+                    margin-bottom: 2rem;
+                    color: #222;
+                }
+
+            .pillars-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2rem;
+                justify-content: center;
+            }
+
+            .pillar-card {
+                background-color: #fff;
+                flex: 1 1 220px;
+                max-width: 260px;
+                border-radius: 8px;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                transition: transform 0.2s, box-shadow 0.2s;
+                text-align: center;
+            }
+
+                .pillar-card:hover {
+                    transform: translateY(-4px);
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                }
+
+            .pillar-icon {
+                background-color: #ddd;
+                height: 120px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+                .pillar-icon img {
+                    max-width: 64px;
+                    max-height: 64px;
+                }
+
+            .pillar-content {
+                padding: 1rem;
+            }
+
+                .pillar-content h3 {
+                    font-size: 1.25rem;
+                    margin-bottom: 0.75rem;
+                    color: #222;
+                }
+
+                .pillar-content p {
+                    font-size: 1rem;
+                    color: #555;
+                    line-height: 1.4;
+                }
+
+            /* 3) TRAILER SECTION (unchanged) */
+
+            /* 4) FEATURES SECTION
+           - Card‐based, similar to personal pages
+        */
+            .features-cards {
+                background-color: #fff;
+                padding: 3rem 1rem;
+            }
+
+                .features-cards .section-title {
+                    text-align: center;
+                    font-size: 2rem;
+                    margin-bottom: 2rem;
+                    color: #222;
+                }
+
+            .features-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2rem;
+                justify-content: center;
+            }
+
+            .feature-card {
+                background-color: #fafafa;
+                flex: 1 1 220px;
+                max-width: 260px;
+                border-radius: 8px;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                transition: transform 0.2s, box-shadow 0.2s;
+                text-align: center;
+            }
+
+                .feature-card:hover {
+                    transform: translateY(-4px);
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                }
+
+            .feature-icon {
+                background-color: #ddd;
+                height: 120px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+                .feature-icon img {
+                    max-width: 64px;
+                    max-height: 64px;
+                }
+
+            .feature-content {
+                padding: 1rem;
+            }
+
+                .feature-content h3 {
+                    font-size: 1.25rem;
+                    margin-bottom: 0.75rem;
+                    color: #222;
+                }
+
+                .feature-content p {
+                    font-size: 1rem;
+                    color: #555;
+                    line-height: 1.4;
+                }
+
+            /* ==============
+           RESPONSIVE
+           ============== */
+            @media (max-width: 768px) {
+                /* Pillars wrap to single column */
+                .pillars-grid, .features-grid {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                /* Hero text font adjustments */
+                .hero-content h1 {
+                    font-size: 2.5rem;
+                }
+
+                .hero-content p {
+                    font-size: 1.1rem;
+                }
+            }
+    </style>
 </head>
 <body>
+    <!-- ================================
+         HEADER WITH HOVER‐ONLY DROPDOWN
+         ================================ -->
     <header>
         <nav class="nav">
             <ul>
@@ -21,7 +243,6 @@
                         <li><a href="designteam.html">Design</a></li>
                     </ul>
                 </li>
-
                 <li><a href="engine.html">Engine</a></li>
                 <li><a href="production.html">Production</a></li>
                 <li><a href="lore.html">Lore</a></li>
@@ -36,32 +257,63 @@
 
     <main>
         <section class="hero">
-            <div class="container hero-container">
-                <div class="hero-text">
-                    <h1>Warhammer 40K: Blood and Thunder</h1>
-                    <p>Download now and conquer the evil Tyranids.</p>
-                    <a href="#" class="btn">Download</a>
-                </div>
-                <div class="hero-image"></div>
+            <div class="hero-content">
+                <h1>Warhammer 40K: Blood and Thunder</h1>
+                <p>Download now and conquer the evil Tyranids.</p>
+                <a href="#" class="btn">Download</a>
             </div>
         </section>
-        <section class="description">
-            <div class="container desc-container">
-                <div class="desc-text">
-                    <h2>Game Features</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                        ultricies, purus vitae elementum commodo, libero nulla vulputate
-                        risus, nec malesuada lacus turpis non purus.
-                    </p>
-                    <h3>Features</h3>
-                    <ol class="features-list">
-                        <li>Epic Battles</li>
-                        <li>Resource Management</li>
-                        <li>Rich Lore</li>
-                    </ol>
+        <section class="pillars">
+            <h2 class="section-title">Four Pillars of the Game</h2>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <img src="icons/strategy.svg" alt="Strategic Depth Icon" />
+                    </div>
+                    <div class="pillar-content">
+                        <h3>Strategic Depth</h3>
+                        <p>
+                            Plan your forces, manage resources, and outmaneuver enemies on
+                            the battlefield.
+                        </p>
+                    </div>
                 </div>
-                <div class="desc-image"></div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <img src="icons/epic_battles.svg" alt="Epic Battles Icon" />
+                    </div>
+                    <div class="pillar-content">
+                        <h3>Epic Battles</h3>
+                        <p>
+                            Experience massive clashes across iconic Warhammer 40K terrain
+                            with hundreds of units on screen.
+                        </p>
+                    </div>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <img src="icons/immersion.svg" alt="Immersive Lore Icon" />
+                    </div>
+                    <div class="pillar-content">
+                        <h3>Immersive Lore</h3>
+                        <p>
+                            Dive deep into the grimdark universe with cinematic cutscenes,
+                            voice‐overs, and rich storytelling.
+                        </p>
+                    </div>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <img src="icons/multiplayer.svg" alt="Multiplayer Icon" />
+                    </div>
+                    <div class="pillar-content">
+                        <h3>Multiplayer</h3>
+                        <p>
+                            Team up or compete with friends in quick‐play skirmishes and
+                            ranked matches.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="trailer" class="trailer">
@@ -75,19 +327,56 @@
                 </div>
             </div>
         </section>
-        <section class="cards">
-            <div class="container cards-container">
-                <div class="card" id="team-card">
-                    <h3>The Team</h3>
-                    <a href="teams.html" class="card-btn">Crucible</a>
+        <section class="features-cards">
+            <h2 class="section-title">Game Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="icons/units.svg" alt="Hundreds of Units Icon" />
+                    </div>
+                    <div class="feature-content">
+                        <h3>Hundreds of Units</h3>
+                        <p>
+                            Command squads of Space Marines, Orks, and Tyranids—each with
+                            unique abilities and stratagems.
+                        </p>
+                    </div>
                 </div>
-                <div class="card" id="engine-card">
-                    <h3>The Engine</h3>
-                    <a href="engine.html" class="card-btn">Engineson</a>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="icons/terrain.svg" alt="Dynamic Terrain Icon" />
+                    </div>
+                    <div class="feature-content">
+                        <h3>Dynamic Terrain</h3>
+                        <p>
+                            Destroy buildings, topple trees, and alter the battlefield in
+                            real time to gain the upper hand.
+                        </p>
+                    </div>
                 </div>
-                <div class="card" id="lore-card">
-                    <h3>The Lore</h3>
-                    <a href="lore.html" class="card-btn">Blood &amp; Thunder</a>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="icons/tech_tree.svg" alt="Tech Tree Icon" />
+                    </div>
+                    <div class="feature-content">
+                        <h3>Deep Tech Tree</h3>
+                        <p>
+                            Research advanced weapons, unlock stratagems, and customize
+                            your army’s loadout.
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="icons/voice_over.svg" alt="Voice‐Over Icon" />
+                    </div>
+                    <div class="feature-content">
+                        <h3>Voice‐Over & Cinematics</h3>
+                        <p>
+                            Hear iconic characters speak and watch cinematic sequences that
+                            bring the universe to life.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
