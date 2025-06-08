@@ -1,808 +1,189 @@
-﻿/* ========================================================================
-   1) RESET / BASE STYLES
-   ======================================================================== */
+﻿/* ─ RESET & BASE ─ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: sans-serif;
-    line-height: 1.6;
-    color: #222;
-    background-color: #fafafa;
-    /* Because header is fixed at ~60px, push content down */
-    padding-top: 60px;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-/* =========================================================================
-   1) SECTION GRADIENT BACKGROUNDS
-   ========================================================================= */
-section,
-.cards,
-.teams-overview,
-.trailer,
-.footer {
-    /* red at top fading to black */
-    background: linear-gradient( to bottom, rgba(180,28,28,0.9) 0%, rgba(0,0,0,0.8) 100% ) !important;
-}
-
-/* =========================================================================
-   2) HEADER / NAV BAR (dark grey)
-   ========================================================================= */
-header {
-    background: #222 !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
-}
-
-.nav > ul {
-    background: #333 !important;
-}
-
-    .nav > ul > li > a {
-        color: #ddd !important;
-    }
-
-        .nav > ul > li > a:hover,
-        .nav .active {
-            color: #fff !important;
-        }
-
-/* =========================================================================
-   3) BUTTONS (white/grey)
-   ========================================================================= */
-.btn,
-.card-btn {
-    background: #fff !important;
-    color: #222 !important;
-    border: 1px solid #aaa !important;
-}
-
-    .btn:hover,
-    .card-btn:hover {
-        background: #eee !important;
-    }
-
-/* =========================================================================
-   4) TEXT COLOR
-   ========================================================================= */
-body, body * {
-    color: #ddd !important;
-}
-/* headings slightly brighter */
-h1, h2, h3, h4, h5, h6 {
-    color: #fff !important;
-}
-
-body {
-    position: relative;
-    z-index: 0; /* establish stacking context */
-}
-
-    /* 2) Create the tint overlay */
-    body::before {
-        content: "";
-        position: fixed;
-        inset: 0; /* cover the entire viewport */
-        pointer-events: none; /* clicks pass through */
-        background: linear-gradient( to bottom, rgba(180,28,28,0.35) 0%, rgba(0,0,0,0.7) 100% );
-        mix-blend-mode: multiply; /* tint everything underneath */
-        z-index: 1; /* above all page content */
-    }
-
-    /* 3) Raise your content above the overlay */
-    body > * {
-        position: relative;
-        z-index: 2;
-    }
-
-/* 4) Keep images and videos from being tinted */
-img, video, svg, picture {
-    mix-blend-mode: normal !important;
-}
-
-/* 5) Lighten your text so it reads over the tint */
-body, body * {
-    color: #ccc !important;
-}
-
-/* 6) Adjust links and buttons to Blood Angel reds */
-a, .btn, .card-btn {
-    color: #ffecec !important;
-    background-color: #b71c1c !important;
-    border-color: #7f1212 !important;
-}
-
-    a:hover, .btn:hover, .card-btn:hover {
-        background-color: #7f1212 !important;
-    }
-
-/* 7) Tweak section backgrounds to be slightly transparent so tint shows */
-section, .cards, .teams-overview, .trailer, .footer {
-    background-color: rgba(255,255,255,0.05) !important;
-    border-color: rgba(180,28,28,0.5) !important;
-}
-/* ───────────────────────────────────────────────────────────────────────────
-   Override team-card to dark grey
-   ─────────────────────────────────────────────────────────────────────────── */
-.team-card {
-    background-color: #333 !important;
-}
-
-    .team-card:hover {
-        background-color: #444 !important;
-    }
-
-/* Ensure the content text inside is still legible */
-.team-card-content h2,
-.team-card-content p {
-    color: #ddd !important;
-}
-
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Utility container to horizontally center and pad */
-.container {
+html, body {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
+    background: #000;
+    font-family: Arial, sans-serif;
 }
 
-/* ========================================================================
-   2) HEADER / NAVIGATION + HOVER‐ONLY DROPDOWN
-   ======================================================================== */
-header {
+body {
+    display: flex;
+    justify-content: center;
+}
+
+/* ─ PAGE WRAPPER & SMOKE ─ */
+.page-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
+    overflow: visible; /* allow scrolling */
+}
+
+.bg-smoke {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 100;
+    height: 100%;
+    background: url('../assets/index/smoke.gif') center/cover no-repeat;
+    z-index: 1;
 }
 
-/* Only the top-level <ul> inside .nav is flex */
-.nav > ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    gap: 1rem;
-    padding: 1rem;
-    background: #f4f4f4;
-}
-
-    /* Each top-level <li> (including dropdown parents) is position: relative */
-    .nav > ul > li {
-        position: relative;
-    }
-
-        /* Top-level nav links */
-        .nav > ul > li > a {
-            padding: 0.5rem 1rem;
-            color: #333;
-            font-weight: 500;
-            transition: background-color 0.2s, color 0.2s;
-        }
-
-            .nav > ul > li > a:hover {
-                text-decoration: underline;
-            }
-
-/* Highlight “active” page link */
-.nav .active {
-    font-weight: bold;
-    color: #007bff;
-}
-
-/* ------------------------------------------------
-   DROPDOWN MENU (Hidden by default, show on hover)
-   ------------------------------------------------ */
-/* Hide the nested <ul class="dropdown-menu"> by default */
-.nav > ul > li > .dropdown-menu {
-    display: none;
+/* ─ SCROLL‑THROUGH STATUES ─ */
+.statues {
     position: absolute;
-    top: 100%; /* directly below its parent <li> */
-    left: 0;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    list-style: none;
-    margin-top: 0.25rem; /* small gap under parent link */
-    min-width: 160px; /* adjust width as needed */
-    z-index: 200;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-    /* Style each item in the dropdown */
-    .nav > ul > li > .dropdown-menu > li > a {
-        display: block;
-        padding: 0.5rem 1rem;
-        color: #333;
-        white-space: nowrap;
-        transition: background-color 0.2s;
-    }
-
-        .nav > ul > li > .dropdown-menu > li > a:hover {
-            background-color: #f4f4f4;
-        }
-
-/* Show the submenu only when hovering over the parent <li class="dropdown"> */
-.nav > ul > li.dropdown:hover > .dropdown-menu {
-    display: block;
-}
-
-
-
-/* ========================================================================
-   3) HERO SECTION (index.html only)
-   ======================================================================== */
-.hero {
-    background-color: #ececec; /* fallback if no background image */
-    /* If/when you have a hero background image, uncomment:
-     background-image: url("../images/hero-bg.jpg");
-     background-size: cover;
-     background-position: center;
-     background-repeat: no-repeat; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: calc(80vh - 60px); /* subtract fixed header height */
-    text-align: center;
-}
-
-.hero-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.hero-text {
-    flex: 1 1 300px;
-}
-
-    .hero-text h1 {
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .hero-text p {
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-        color: #555;
-    }
-
-.btn {
-    display: inline-block;
-    margin-top: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    background: #444;
-    color: #fff;
-    border-radius: 4px;
-    font-weight: 500;
-    transition: background-color 0.2s;
-}
-
-    .btn:hover {
-        background: #222;
-    }
-
-.hero-image {
-    flex: 1 1 300px;
-    height: 250px;
-    background-color: #ddd; /* fallback if no illustration */
-    /* If/when you have the illustration, uncomment + update:
-     background-image: url("../images/hero-illustration.jpg");
-     background-size: contain;
-     background-repeat: no-repeat;
-     background-position: center; */
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* ========================================================================
-   4) DESCRIPTION + FEATURES SECTION (index.html only)
-   ======================================================================== */
-.description {
-    background-color: #fff; /* fallback if no background */
-    /* If/when you have a features background image, uncomment:
-     background-image: url("../images/feature-bg.jpg");
-     background-size: cover;
-     background-position: center;
-     background-repeat: no-repeat; */
-    padding: 3rem 0;
-}
-
-.desc-container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.desc-text {
-    flex: 1 1 350px;
-}
-
-    .desc-text h2 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    .desc-text p {
-        margin-bottom: 1rem;
-        color: #555;
-    }
-
-.features-list {
-    list-style: decimal inside;
-    padding-left: 1rem;
-    margin-top: 1rem;
-}
-
-    .features-list li {
-        margin-bottom: 0.5rem;
-        color: #333;
-    }
-
-.desc-image {
-    flex: 1 1 300px;
-    height: 200px;
-    background-color: #ddd; /* fallback if no final art */
-    /* If/when you have the feature illustration, uncomment:
-     background-image: url("../images/feature-illustration.jpg");
-     background-size: contain;
-     background-repeat: no-repeat;
-     background-position: center; */
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* ========================================================================
-   5) TRAILER SECTION (index.html only)
-   ======================================================================== */
-.trailer {
-    background: #f4f4f4;
-    padding: 3rem 0;
-}
-
-.trailer-container {
-    text-align: center;
-}
-
-    .trailer-container h2 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-    }
-
-.video-wrapper {
-    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
+    height: 100%; /* tall so you scroll from head→base */
+    pointer-events: none;
+    z-index: 2;
+    background: url('../assets/index/statuettes.png') center top/ 100% no-repeat;
 }
 
-    .video-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-/* ========================================================================
-   6) CARDS SECTION (index.html only)
-   ======================================================================== */
-.cards {
-    background: #fff;
-    padding: 3rem 0;
-}
-
-.cards-container {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.card {
-    flex: 1 1 250px;
-    background: #ececec;
-    border-radius: 8px;
-    padding: 1.5rem;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, background-color 0.2s;
-}
-
-    .card:hover {
-        transform: translateY(-4px);
-        background: #e0e0e0;
-    }
-
-    .card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-
-.card-btn {
-    display: inline-block;
-    margin-top: 1rem;
-    background: #007bff;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    font-weight: 500;
-    transition: background-color 0.2s;
-}
-
-    .card-btn:hover {
-        background: #0056b3;
-    }
-
-/* ========================================================================
-   7) TEAMS OVERVIEW SECTION (teams.html only)
-   ======================================================================== */
-.teams-overview {
-    background-color: #f9f9f9;
-    padding: 3rem 0;
-}
-
-    .teams-overview .section-title {
-        font-size: 2.5rem;
-        text-align: center;
-        margin-bottom: 0.5rem;
-        color: #222;
-    }
-
-    .teams-overview .section-subtitle {
-        text-align: center;
-        margin-bottom: 2rem;
-        color: #555;
-    }
-
-.teams-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-}
-
-/* Each team card is an <a> that looks like a block */
-.team-card {
-    flex: 1 1 240px; /* up to 4 per row on desktop */
-    max-width: 280px;
-    text-decoration: none;
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: #e0e0e0; /* fallback if no background‐image */
-    transition: transform 0.2s, background-color 0.2s;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+/* ─ HERO (logo + media) ─ */
+.hero {
     position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    gap: 1rem;
 }
 
-    /* Optional: once you have images for each team, override via ID:
-   #production-team {
-     background-image: url("../images/production-bg.jpg");
-     background-size: cover;
-     background-position: center;
-   }
-   #art-team { … }
-   #code-team { … }
-   #design-team { … }
-*/
+.hero-logo {
+    width: 1000px; /* 4× bigger than 60px */
+    height: auto;
+}
 
-    .team-card:hover {
-        transform: translateY(-4px);
-        background-color: #d0d0d0;
-    }
+.hero-media {
+    width: 60%;
+    max-width: 800px;
+    border: none; /* remove white border */
+}
 
-.team-card-content {
-    padding: 1.5rem;
+.btn-download img {
+    width: 200px;
+}
+
+/* ─ PILLARS GRID ─ */
+.pillars {
+    position: relative;
+    z-index: 3;
     text-align: center;
-}
-
-    .team-card-content h2 {
-        font-size: 1.75rem;
-        margin-bottom: 0.5rem;
-        color: #222;
-    }
-
-    .team-card-content p {
-        font-size: 1rem;
-        color: #444;
-        line-height: 1.4;
-    }
-
-/* ========================================================================
-   8) FOOTER (all pages)
-   ======================================================================== */
-.footer {
-    background: #222;
-    color: #ddd;
-    margin-top: auto; /* push footer to bottom if content is short */
     padding: 2rem 0;
 }
 
-.footer-container {
+    .pillars h2 {
+        color: #fff;
+        font-size: 2rem;
+        text-shadow: 2px 2px 4px #000;
+        margin-bottom: 1rem;
+    }
+
+.pillar-list {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.pillar-item img {
+    width: 100%;
+}
+
+/* ─ DESCRIPTION ─ */
+.description {
+    position: relative;
+    z-index: 3;
+    padding: 2rem 0;
+}
+
+.desc-container {
+    position: relative;
+    width: 70%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.desc-frame {
+    width: 100%;
+}
+
+.desc-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 80%;
+}
+
+/* ─ FEATURES ─ */
+.features {
+    position: relative;
+    z-index: 3;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 0;
 }
 
-.footer-logo img {
-    height: 60px;
-    width: auto;
-    border-radius: 50%;
+.feature-item img {
+    width: 100px;
 }
 
-.footer-links {
+/* ─ FOOTER ─ */
+.site-footer {
+    position: relative;
+    z-index: 3;
     display: flex;
+    justify-content: center;
     gap: 1rem;
+    padding: 2rem 0;
 }
 
-    .footer-links a img {
-        width: 24px;
-        height: auto;
-        transition: filter 0.2s;
+    .site-footer a img {
+        width: 50px;
     }
 
-    .footer-links a:hover img {
-        filter: brightness(1.2);
+/* ─ RESPONSIVE ─ */
+@media (max-width: 1024px) {
+    .hero-media {
+        width: 80%;
     }
 
-.footer-copy {
-    flex-basis: 100%;
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: #aaa;
-}
+    .pillar-list {
+        grid-template-columns: repeat(2, 150px);
+        gap: 1rem;
+    }
 
-/* ========================================================================
-   9) RESPONSIVE ADJUSTMENTS (NARROW SCREENS)
-   ======================================================================== */
-@media (max-width: 768px) {
-    /* Stack hero & description columns vertically */
-    .hero-container,
     .desc-container {
+        width: 85%;
+    }
+}
+
+@media (max-width: 768px) {
+    .pillar-list {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .features {
         flex-direction: column;
-        text-align: center;
     }
 
-    /* Make embedded video shorter if needed */
-    .video-wrapper {
-        padding-bottom: 56.25%;
+    .hero-logo {
+        width: 180px;
     }
-
-    /* Stack cards vertically */
-    .cards-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Stack team cards vertically */
-    .teams-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Stack footer elements vertically */
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    /* Wrap nav items if they overflow */
-    .nav > ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .profile-header {
-        background-color: #ffffff;
-        padding: 2rem 1rem;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        margin-bottom: 2rem;
-    }
-
-    .profile-header .profile-container {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-        flex-wrap: wrap;
-    }
-
-    .profile-photo {
-        flex: 0 0 150px;
-        width: 150px;
-        height: 150px;
-        background-color: #ddd; /* fallback color */
-        border-radius: 50%;
-        overflow: hidden;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-        .profile-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-    .profile-info {
-        flex: 1 1 300px;
-    }
-
-        .profile-info h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .profile-info p.role {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 1rem;
-        }
-
-    .profile-links a {
-        display: inline-block;
-        margin-right: 0.75rem;
-        color: #007bff;
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.2s;
-    }
-
-        .profile-links a:hover {
-            color: #0056b3;
-        }
-
-    /* 2) Tasks Done Section (grid of “task cards” or a dropdown if you prefer) */
-    .tasks-section {
-        background-color: #fafafa;
-        padding: 2rem 1rem;
-        margin-bottom: 2rem;
-    }
-
-        .tasks-section .section-title {
-            text-align: center;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: #222;
-        }
-
-    .tasks-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-        justify-content: center;
-    }
-
-    .task-card {
-        background-color: #fff;
-        border-radius: 8px;
-        width: 200px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        overflow: hidden;
-        transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-        .task-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-
-        .task-card .task-icon {
-            background-color: #ddd; /* fallback if no icon image */
-            width: 100%;
-            height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-            .task-card .task-icon img {
-                max-width: 80px;
-                max-height: 80px;
-            }
-
-        .task-card .task-content {
-            padding: 1rem;
-            text-align: center;
-        }
-
-            .task-card .task-content h3 {
-                font-size: 1.1rem;
-                margin-bottom: 0.5rem;
-                color: #222;
-            }
-
-            .task-card .task-content p {
-                font-size: 0.9rem;
-                color: #555;
-            }
-
-    /* If you prefer a collapsible dropdown for each task instead of a card:
-       .task-dropdown { … }  You can replace .tasks-grid/.task-card with that. */
-
-    /* 3) Experience & Competencies Section */
-    .experience-section {
-        background-color: #fff;
-        padding: 2rem 1rem;
-        margin-bottom: 2rem;
-    }
-
-        .experience-section .section-title {
-            text-align: center;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: #222;
-        }
-
-    .experience-list {
-        list-style: none;
-        max-width: 800px;
-        margin: 0 auto;
-        padding-left: 1rem;
-    }
-
-        .experience-list li {
-            position: relative;
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-            color: #444;
-        }
-
-            .experience-list li::before {
-                content: "•";
-                position: absolute;
-                left: 0;
-                top: 0;
-                font-size: 1.2rem;
-                color: #007bff;
-            }
-
-    /* 4) Responsive adjustments for profile page sections */
-    @media (max-width: 768px) {
-        .profile-header .profile-container {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .tasks-grid {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .experience-list {
-            padding-left: 0.5rem;
-        }
-    }
-
-
 }
