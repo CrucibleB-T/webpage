@@ -7,171 +7,209 @@
     <title>Warhammer 40K: Blood &amp; Thunder — Name Surname</title>
     <link rel="stylesheet" href="css/style.css" />
     <style>
-    /* ───────────────────────────────────────────────────────────────────────────
-       If you want, you can move these into css/style.css.
-       They cover the “profile page” specific sections.
-    ─────────────────────────────────────────────────────────────────────────── */
-    /* 1) Profile Header (top box with photo, name, role, links) */
-    .profile-header {
-      background-color: #ffffff;
-      padding: 2rem 1rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      margin-bottom: 2rem;
-    }
-    .profile-header .profile-container {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .profile-photo {
-      flex: 0 0 150px;
-      width: 150px;
-      height: 150px;
-      background-color: #ddd; /* fallback color */
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .profile-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .profile-info {
-      flex: 1 1 300px;
-    }
-    .profile-info h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    .profile-info p.role {
-      font-size: 1.1rem;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-    .profile-links a {
-      display: inline-block;
-      margin-right: 0.75rem;
-      color: #007bff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .profile-links a:hover {
-      color: #0056b3;
-    }
+                /* ───────────────────────────────────────────────────────────────────────────
+               If you want, you can move these into css/style.css.
+               They cover the “profile page” specific sections.
+            ─────────────────────────────────────────────────────────────────────────── */
+                /* 1) Profile Header (top box with photo, name, role, links) */
+                .profile-header {
+                    background-color: #ffffff;
+                    padding: 2rem 1rem;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    margin-bottom: 2rem;
+                }
 
-    /* 2) Tasks Done Section (grid of “task cards” or a dropdown if you prefer) */
-    .tasks-section {
-      background-color: #fafafa;
-      padding: 2rem 1rem;
-      margin-bottom: 2rem;
-    }
-    .tasks-section .section-title {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: #222;
-    }
-    .tasks-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-    }
-    .task-card {
-      background-color: #fff;
-      border-radius: 8px;
-      width: 200px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .task-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }
-    .task-card .task-icon {
-      background-color: #ddd; /* fallback if no icon image */
-      width: 100%;
-      height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .task-card .task-icon img {
-      max-width: 80px;
-      max-height: 80px;
-    }
-    .task-card .task-content {
-      padding: 1rem;
-      text-align: center;
-    }
-    .task-card .task-content h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: #222;
-    }
-    .task-card .task-content p {
-      font-size: 0.9rem;
-      color: #555;
-    }
+                    .profile-header .profile-container {
+                        display: flex;
+                        align-items: center;
+                        gap: 2rem;
+                        flex-wrap: wrap;
+                    }
 
-    /* If you prefer a collapsible dropdown for each task instead of a card:
-       .task-dropdown { … }  You can replace .tasks-grid/.task-card with that. */
+                .profile-photo {
+                    flex: 0 0 150px;
+                    width: 150px;
+                    height: 150px;
+                    background-color: #ddd; /* fallback color */
+                    border-radius: 50%;
+                    overflow: hidden;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
 
-    /* 3) Experience & Competencies Section */
-    .experience-section {
-      background-color: #fff;
-      padding: 2rem 1rem;
-      margin-bottom: 2rem;
-    }
-    .experience-section .section-title {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: #222;
-    }
-    .experience-list {
-      list-style: none;
-      max-width: 800px;
-      margin: 0 auto;
-      padding-left: 1rem;
-    }
-    .experience-list li {
-      position: relative;
-      margin-bottom: 1rem;
-      padding-left: 1.5rem;
-      color: #444;
-    }
-    .experience-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-size: 1.2rem;
-      color: #007bff;
-    }
+                    .profile-photo img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
 
-    /* 4) Responsive adjustments for profile page sections */
-    @media (max-width: 768px) {
-      .profile-header .profile-container {
-        flex-direction: column;
-        text-align: center;
-      }
-      .tasks-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-      .experience-list {
-        padding-left: 0.5rem;
-      }
-    }
-  </style>
+                .profile-info {
+                    flex: 1 1 300px;
+                }
+
+                    .profile-info h1 {
+                        font-size: 2rem;
+                        margin-bottom: 0.5rem;
+                    }
+
+                    .profile-info p.role {
+                        font-size: 1.1rem;
+                        color: #555;
+                        margin-bottom: 1rem;
+                    }
+
+                .profile-links a {
+                    display: inline-block;
+                    margin-right: 0.75rem;
+                    color: #007bff;
+                    text-decoration: none;
+                    font-weight: 500;
+                    transition: color 0.2s;
+                }
+
+                    .profile-links a:hover {
+                        color: #0056b3;
+                    }
+
+                /* 2) Tasks Done Section (grid of “task cards” or a dropdown if you prefer) */
+                .tasks-section {
+                    background-color: #fafafa;
+                    padding: 2rem 1rem;
+                    margin-bottom: 2rem;
+                }
+
+                    .tasks-section .section-title {
+                        text-align: center;
+                        font-size: 1.8rem;
+                        margin-bottom: 1.5rem;
+                        color: #222;
+                    }
+
+                .tasks-grid {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1.5rem;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .task-card {
+                    background-color: #fff;
+                    border-radius: 8px;
+                    flex: 0 0 200px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    overflow: hidden;
+                    transition: transform 0.2s, box-shadow 0.2s;
+                }
+
+                    .task-card.large {
+                        /* Example: make large cards twice as wide (400px) */
+                        flex: 0 0 400px;
+                        /* If you’d rather have it take 100% of the container’s width, use:
+            flex: 0 0 100%;
+            max-width: 100%;
+        */
+                    }
+
+                    .task-card:hover {
+                        transform: translateY(-4px);
+                        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+                    }
+
+                    .task-card .task-icon {
+                        background-color: #ddd; /* fallback if no icon image */
+                        width: 100%;
+                        height: 120px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        object-fit: contain;
+                    }
+
+                    .task-card.large .task-icon {
+                        height: 350px; /* increase height if you need more vertical space */
+                    }
+
+                    .task-card .task-icon img {
+                        max-width: 80px;
+                        max-height: 80px;
+                    }
+
+                    .task-card .task-content {
+                        padding: 1rem;
+                        text-align: center;
+                    }
+
+                        .task-card .task-content h3 {
+                            font-size: 1.1rem;
+                            margin-bottom: 0.5rem;
+                            color: #222;
+                        }
+
+                        .task-card .task-content p {
+                            font-size: 0.9rem;
+                            color: #555;
+                        }
+
+                /* If you prefer a collapsible dropdown for each task instead of a card:
+               .task-dropdown { … }  You can replace .tasks-grid/.task-card with that. */
+
+                /* 3) Experience & Competencies Section */
+                .experience-section {
+                    background-color: #fff;
+                    padding: 2rem 1rem;
+                    margin-bottom: 2rem;
+                }
+
+                    .experience-section .section-title {
+                        text-align: center;
+                        font-size: 1.8rem;
+                        margin-bottom: 1.5rem;
+                        color: #222;
+                    }
+
+                .experience-list {
+                    list-style: none;
+                    max-width: 800px;
+                    margin: 0 auto;
+                    padding-left: 1rem;
+                }
+
+                    .experience-list li {
+                        position: relative;
+                        margin-bottom: 1rem;
+                        padding-left: 1.5rem;
+                        color: #444;
+                    }
+
+                        .experience-list li::before {
+                            content: "•";
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            font-size: 1.2rem;
+                            color: #007bff;
+                        }
+
+                /* 4) Responsive adjustments for profile page sections */
+                @media (max-width: 768px) {
+                    .profile-header .profile-container {
+                        flex-direction: column;
+                        text-align: center;
+                    }
+
+                    .tasks-grid {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+
+                    .experience-list {
+                        padding-left: 0.5rem;
+                    }
+                }
+    </style>
 </head>
 <body>
     <header>
@@ -241,9 +279,12 @@
         <div class="container">
             <h2 class="section-title">Tasks &amp; Responsibilities</h2>
             <div class="tasks-grid">
-                <div class="task-card">
+                <div class="task-card large">
                     <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
+                        <model-viewer camera-controls touch-action="pan-y" autoplay ar ar-modes="webxr scene-viewer"
+                                      scale="0.5 0.5 0.5" shadow-intensity="1" src="assets/glb/Pablo/Trees.glb"
+                                      alt="An animated 3D model of a robot" style="height:600px; width:100%">
+                        </model-viewer>
                     </div>
                     <div class="task-content">
                         <h3>Feature A</h3>
@@ -254,9 +295,12 @@
                     </div>
                 </div>
 
-                <div class="task-card">
+                <div class="task-card large">
                     <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
+                        <model-viewer camera-controls touch-action="pan-y" autoplay ar ar-modes="webxr scene-viewer"
+                                      scale="0.5 0.5 0.5" shadow-intensity="1" src="assets/glb/Pablo/Web_pueblo.glb"
+                                      alt="An animated 3D model of a robot" style="height:600px; width:100%">
+                        </model-viewer>
                     </div>
                     <div class="task-content">
                         <h3>Feature B</h3>
@@ -267,9 +311,12 @@
                     </div>
                 </div>
 
-                <div class="task-card">
+                <div class="task-card large">
                     <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
+                        <model-viewer camera-controls touch-action="pan-y" autoplay ar ar-modes="webxr scene-viewer"
+                                      scale="0.5 0.5 0.5" shadow-intensity="1" src="assets/glb/Pablo/Level1_Zone2.glb"
+                                      alt="An animated 3D model of a robot" style="height:600px; width:100%">
+                        </model-viewer>
                     </div>
                     <div class="task-content">
                         <h3>Feature C</h3>
@@ -280,9 +327,12 @@
                     </div>
                 </div>
 
-                <div class="task-card">
+                <div class="task-card large">
                     <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
+                        <model-viewer camera-controls touch-action="pan-y" autoplay ar ar-modes="webxr scene-viewer"
+                                      scale="0.5 0.5 0.5" shadow-intensity="1" src="assets/glb/Pablo/Level1_Zone3.glb"
+                                      alt="An animated 3D model of a robot" style="height:600px; width:100%">
+                        </model-viewer>
                     </div>
                     <div class="task-content">
                         <h3>Feature D</h3>
@@ -324,3 +374,5 @@
     </footer>
 </body>
 </html>
+
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
