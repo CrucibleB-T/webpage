@@ -6,166 +6,8 @@
           content="width=device-width, initial-scale=1.0" />
     <title>Warhammer 40K: Blood and Thunder — The Engine</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
     <style>
-         /* ================================
-        ENGINE-PAGE–SPECIFIC STYLES
-        (You can move these into css/style.css if you prefer)
-        ================================ */
-
-         /* 1) Hero / Banner for "The Engine" */
-         .engine-hero {
-             background-color: #ececec; /* fallback color */
-             /* Once you have a background image:
-          background-image: url("../images/engine-banner.jpg");
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat; */
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             height: calc(60vh - 60px); /* subtract header height */
-             text-align: center;
-             padding: 0 1rem;
-         }
-
-             .engine-hero .engine-content {
-                 max-width: 800px;
-             }
-
-             .engine-hero h1 {
-                 font-size: 3rem;
-                 margin-bottom: 1rem;
-                 color: #222;
-             }
-
-             .engine-hero p {
-                 font-size: 1.2rem;
-                 margin-bottom: 1.5rem;
-                 color: #555;
-             }
-
-             .engine-hero .btn {
-                 padding: 0.75rem 1.5rem;
-             }
-
-         /* 2) Features Section */
-         .engine-features {
-             background-color: #f9f9f9;
-             padding: 3rem 0;
-         }
-
-             .engine-features .section-title {
-                 text-align: center;
-                 font-size: 2rem;
-                 margin-bottom: 2rem;
-                 color: #222;
-             }
-
-         .features-grid {
-             display: flex;
-             flex-wrap: wrap;
-             gap: 2rem;
-             justify-content: center;
-         }
-
-         .feature-card {
-             flex: 1 1 260px;
-             max-width: 300px;
-             background-color: #fff;
-             border-radius: 8px;
-             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-             overflow: hidden;
-             transition: transform 0.2s, box-shadow 0.2s;
-         }
-
-             .feature-card:hover {
-                 transform: translateY(-4px);
-                 box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-             }
-
-             .feature-card .feature-icon {
-                 background-color: #ddd;
-                 width: 100%;
-                 height: 160px;
-                 display: flex;
-                 align-items: center;
-                 justify-content: center;
-             }
-
-                 .feature-card .feature-icon img {
-                     max-width: 80px;
-                     max-height: 80px;
-                 }
-
-             .feature-card .feature-content {
-                 padding: 1.5rem;
-                 text-align: center;
-             }
-
-                 .feature-card .feature-content h3 {
-                     font-size: 1.25rem;
-                     margin-bottom: 0.5rem;
-                     color: #222;
-                 }
-
-                 .feature-card .feature-content p {
-                     font-size: 1rem;
-                     color: #555;
-                 }
-
-         /* 3) Libraries Section (grid of small icons) */
-         .engine-libraries {
-             background-color: #fff;
-             padding: 3rem 0;
-         }
-
-             .engine-libraries .section-title {
-                 text-align: center;
-                 font-size: 2rem;
-                 margin-bottom: 2rem;
-                 color: #222;
-             }
-
-         .libraries-grid {
-             display: grid;
-             grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-             gap: 1.5rem;
-             justify-items: center;
-             align-items: center;
-             max-width: 900px;
-             margin: 0 auto;
-             padding: 0 1rem;
-         }
-
-         .library-icon {
-             width: 64px;
-             height: 64px;
-             background-color: #eee;
-             border-radius: 8px;
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             transition: background-color 0.2s;
-         }
-
-             .library-icon img {
-                 max-width: 40px;
-                 max-height: 40px;
-             }
-
-             .library-icon:hover {
-                 background-color: #ddd;
-             }
-
-         @media (max-width: 768px) {
-             .engine-hero h1 {
-                 font-size: 2.5rem;
-             }
-
-             .feature-card, .libraries-grid {
-                 max-width: 100%;
-             }
-         }
     </style>
 </head>
 <body>
@@ -214,9 +56,10 @@
                             <img src="icons/performance.svg" alt="High Performance Icon" />
                         </div>
                         <div class="feature-content">
-                            <h3>Titulo</h3>
+                            <h3>Animation / Skeletal Animation</h3>
                             <p>
-                                Bla bla bla ble ble ble
+                                Skeletal Animation
+                                Animator Component
                             </p>
                         </div>
                     </div>
@@ -225,9 +68,11 @@
                             <img src="icons/graphics.svg" alt="Advanced Graphics Icon" />
                         </div>
                         <div class="feature-content">
-                            <h3>Titulo</h3>
+                            <h3>Audio System FMOD</h3>
                             <p>
-                                Bla bla bla ble ble ble
+                                FMOD Integration
+                                Audio Components
+                                Audio Manager
                             </p>
                         </div>
                     </div>
@@ -236,9 +81,184 @@
                             <img src="icons/network.svg" alt="Robust Networking Icon" />
                         </div>
                         <div class="feature-content">
-                            <h3>Titulo</h3>
+                            <h3>Editor Interface (ImGui)</h3>
                             <p>
-                                Bla bla bla ble ble ble
+                                ImGui-based Editor
+                                Dockable Panels
+                                Theme Support
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="icons/performance.svg" alt="High Performance Icon" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Inspector</h3>
+                            <p>
+                                Component Editing
+                                Property Reflection
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="icons/network.svg" alt="Robust Networking Icon" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Asset Library</h3>
+                            <p>
+                                Asset Browser
+                                Drag & Drop
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="icons/performance.svg" alt="High Performance Icon" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Hierarchy Editor</h3>
+                            <p>
+                                Scene Graph Visualization
+                                Multi-Selection & Grouping
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="icons/network.svg" alt="Robust Networking Icon" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Viewport / Game Viewport</h3>
+                            <p>
+                                Scene Viewport
+                                Game Viewport
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="icons/performance.svg" alt="High Performance Icon" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Console</h3>
+                            <p>
+                                Log Output
+                                Command Input
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="icons/graphics.svg" alt="Advanced Graphics Icon" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Input System (SDL)</h3>
+                            <p>
+                                Unified Input Handling
+                                Custom Bindings
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="icons/graphics.svg" alt="Advanced Graphics Icon" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Scene Management & Serialization</h3>
+                            <p>
+                                Scene System
+                                Serialization
+                                Prefab System
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="icons/network.svg" alt="Robust Networking Icon" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>ECS System (Entity-Component-System)</h3>
+                            <p>
+                                Modular Architecture
+                                Built-in Components
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="icons/performance.svg" alt="High Performance Icon" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Resource Manager</h3>
+                            <p>
+                                Asset Caching
+                                Hot Reloading
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="icons/graphics.svg" alt="Advanced Graphics Icon" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Scripting System (C# / Mono CLI)</h3>
+                            <p>
+                                Mono Integration
+                                Live Reloading
+                                Component Model
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="icons/network.svg" alt="Robust Networking Icon" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Tweening</h3>
+                            <p>
+                                Animation Tweens
+                                Custom Easing
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="icons/performance.svg" alt="High Performance Icon" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Particle System</h3>
+                            <p>
+                                Preset Library
+                                Custom Emitters
+                                Instanced Rendering
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="icons/graphics.svg" alt="Advanced Graphics Icon" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Physics (Bullet)</h3>
+                            <p>
+                                Bullet Physics Integration
+                                Collider Components
+                                Physics Materials
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="icons/graphics.svg" alt="Advanced Graphics Icon" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>UI System</h3>
+                            <p>
+                                UI Canvas
+                                UI Components
+                                Editor Integration
                             </p>
                         </div>
                     </div>

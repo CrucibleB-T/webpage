@@ -6,205 +6,224 @@
           content="width=device-width, initial-scale=1.0" />
     <title>Warhammer 40K: Blood and Thunder</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
     <style>
-            /* ================================
-           PAGE‐SPECIFIC STYLES FOR index.html
-           ================================ */
+        /* ================================
+                PAGE‐SPECIFIC STYLES FOR index.html
+                ================================ */
 
-            /* 1) HERO SECTION
-           - Full‐width background image
-           - Centered text and button
-        */
-            .hero {
-                position: relative;
+        /* 1) HERO SECTION
+                - Full‐width background image
+                - Centered text and button
+             */
+        body {
+            font-family: 'Anton';
+        }
+
+        .logosection {
+            position: relative;
+            width: 100%;
+            height: calc(80vh - 60px); /* leave room for 60px header */
+            background-image: url("https://via.placeholder.com/1600x900?text=Hero+Background");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: calc(80vh - 60px); /* leave room for 60px header */
+            background-image: url("https://via.placeholder.com/1600x900?text=Hero+Background");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+            .hero::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
                 width: 100%;
-                height: calc(80vh - 60px); /* leave room for 60px header */
-                background-image: url("https://via.placeholder.com/1600x900?text=Hero+Background");
-                background-size: cover;
-                background-position: center;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6); /* dark overlay for readability */
+                z-index: 0;
+            }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 1rem;
+        }
+
+            .hero-content h1 {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-content p {
+                font-size: 1.25rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-content .btn {
+                padding: 0.75rem 1.5rem;
+                background: #d32f2f;
                 color: #fff;
+                border-radius: 4px;
+                font-weight: 500;
+                transition: background-color 0.2s;
             }
 
-                .hero::before {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: rgba(0, 0, 0, 0.6); /* dark overlay for readability */
-                    z-index: 0;
+                .hero-content .btn:hover {
+                    background: #b71c1c;
                 }
 
-            .hero-content {
-                position: relative;
-                z-index: 1;
-                max-width: 800px;
-                padding: 0 1rem;
-            }
+        /* 2) PILLARS SECTION
+                - Four cards in a row (wrap on mobile)
+             */
+        .pillars {
+            background-color: #f9f9f9;
+            padding: 3rem 1rem;
+        }
 
-                .hero-content h1 {
-                    font-size: 3rem;
-                    margin-bottom: 1rem;
-                }
-
-                .hero-content p {
-                    font-size: 1.25rem;
-                    margin-bottom: 1.5rem;
-                }
-
-                .hero-content .btn {
-                    padding: 0.75rem 1.5rem;
-                    background: #d32f2f;
-                    color: #fff;
-                    border-radius: 4px;
-                    font-weight: 500;
-                    transition: background-color 0.2s;
-                }
-
-                    .hero-content .btn:hover {
-                        background: #b71c1c;
-                    }
-
-            /* 2) PILLARS SECTION
-           - Four cards in a row (wrap on mobile)
-        */
-            .pillars {
-                background-color: #f9f9f9;
-                padding: 3rem 1rem;
-            }
-
-                .pillars .section-title {
-                    text-align: center;
-                    font-size: 2rem;
-                    margin-bottom: 2rem;
-                    color: #222;
-                }
-
-            .pillars-grid {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 2rem;
-                justify-content: center;
-            }
-
-            .pillar-card {
-                background-color: #fff;
-                flex: 1 1 220px;
-                max-width: 260px;
-                border-radius: 8px;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-                overflow: hidden;
-                transition: transform 0.2s, box-shadow 0.2s;
+            .pillars .section-title {
                 text-align: center;
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                color: #222;
             }
 
-                .pillar-card:hover {
-                    transform: translateY(-4px);
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-                }
+        .pillars-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
 
-            .pillar-icon {
-                background-color: #ddd;
-                height: 120px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+        .pillar-card {
+            background-color: #fff;
+            flex: 1 1 220px;
+            max-width: 260px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+
+            .pillar-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             }
 
-                .pillar-icon img {
-                    max-width: 64px;
-                    max-height: 64px;
-                }
+        .pillar-icon {
+            background-color: #ddd;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-            .pillar-content {
-                padding: 1rem;
+            .pillar-icon img {
+                max-width: 64px;
+                max-height: 64px;
             }
 
-                .pillar-content h3 {
-                    font-size: 1.25rem;
-                    margin-bottom: 0.75rem;
-                    color: #222;
-                }
+        .pillar-content {
+            padding: 1rem;
+        }
 
-                .pillar-content p {
-                    font-size: 1rem;
-                    color: #555;
-                    line-height: 1.4;
-                }
-
-            /* 3) TRAILER SECTION (unchanged) */
-
-            /* 4) FEATURES SECTION
-           - Card‐based, similar to personal pages
-        */
-            .features-cards {
-                background-color: #fff;
-                padding: 3rem 1rem;
+            .pillar-content h3 {
+                font-size: 1.25rem;
+                margin-bottom: 0.75rem;
+                color: #222;
             }
 
-                .features-cards .section-title {
-                    text-align: center;
-                    font-size: 2rem;
-                    margin-bottom: 2rem;
-                    color: #222;
-                }
-
-            .features-grid {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 2rem;
-                justify-content: center;
+            .pillar-content p {
+                font-size: 1rem;
+                color: #555;
+                line-height: 1.4;
             }
 
-            .feature-card {
-                background-color: #fafafa;
-                flex: 1 1 220px;
-                max-width: 260px;
-                border-radius: 8px;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-                overflow: hidden;
-                transition: transform 0.2s, box-shadow 0.2s;
+        /* 3) TRAILER SECTION (unchanged) */
+
+        /* 4) FEATURES SECTION
+                - Card‐based, similar to personal pages
+             */
+        .features-cards {
+            background-color: #fff;
+            padding: 3rem 1rem;
+        }
+
+            .features-cards .section-title {
                 text-align: center;
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                color: #222;
             }
 
-                .feature-card:hover {
-                    transform: translateY(-4px);
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-                }
+        .features-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
 
-            .feature-icon {
-                background-color: #ddd;
-                height: 120px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+        .feature-card {
+            background-color: #fafafa;
+            flex: 1 1 220px;
+            max-width: 260px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+
+            .feature-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             }
 
-                .feature-icon img {
-                    max-width: 64px;
-                    max-height: 64px;
-                }
+        .feature-icon {
+            background-color: #ddd;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-            .feature-content {
-                padding: 1rem;
+            .feature-icon img {
+                max-width: 64px;
+                max-height: 64px;
             }
 
-                .feature-content h3 {
-                    font-size: 1.25rem;
-                    margin-bottom: 0.75rem;
-                    color: #222;
-                }
+        .feature-content {
+            padding: 1rem;
+        }
 
-                .feature-content p {
-                    font-size: 1rem;
-                    color: #555;
-                    line-height: 1.4;
-                }
+            .feature-content h3 {
+                font-size: 1.25rem;
+                margin-bottom: 0.75rem;
+                color: #222;
+            }
+
+            .feature-content p {
+                font-size: 1rem;
+                color: #555;
+                line-height: 1.4;
+            }
 
 
         .pillars {
@@ -214,213 +233,133 @@
             padding: 3rem 1rem; /* keep your existing padding */
         }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0" />
-    <title>Warhammer 40K: Blood and Thunder</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <style>
-            /* ================================
-           PAGE‐SPECIFIC STYLES FOR index.html
-           ================================ */
-
-            /* 1) HERO SECTION
-           - Full‐width background image
-           - Centered text and button
-        */
-            .hero {
-                position: relative;
-                width: 100%;
-                height: calc(80vh - 60px); /* leave room for 60px header */
-                background-image: url("https://via.placeholder.com/1600x900?text=Hero+Background");
-                background-size: cover;
-                background-position: center;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+            .pillars .section-title {
                 text-align: center;
-                color: #fff;
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                color: #222;
             }
 
-                .hero::before {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: rgba(0, 0, 0, 0.6); /* dark overlay for readability */
-                    z-index: 0;
-                }
+        .pillars-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
 
-            .hero-content {
-                position: relative;
-                z-index: 1;
-                max-width: 800px;
-                padding: 0 1rem;
+        .pillar-card {
+            background-color: #fff;
+            flex: 1 1 220px;
+            max-width: 260px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+
+            .pillar-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             }
 
-                .hero-content h1 {
-                    font-size: 3rem;
-                    margin-bottom: 1rem;
-                }
+        .pillar-icon {
+            background-color: #ddd;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-                .hero-content p {
-                    font-size: 1.25rem;
-                    margin-bottom: 1.5rem;
-                }
-
-                .hero-content .btn {
-                    padding: 0.75rem 1.5rem;
-                    background: #d32f2f;
-                    color: #fff;
-                    border-radius: 4px;
-                    font-weight: 500;
-                    transition: background-color 0.2s;
-                }
-
-                    .hero-content .btn:hover {
-                        background: #b71c1c;
-                    }
-
-            /* 2) PILLARS SECTION
-           - Four cards in a row (wrap on mobile)
-        */
-            .pillars {
-                background-color: #f9f9f9;
-                padding: 3rem 1rem;
+            .pillar-icon img {
+                max-width: 64px;
+                max-height: 64px;
             }
 
-                .pillars .section-title {
-                    text-align: center;
-                    font-size: 2rem;
-                    margin-bottom: 2rem;
-                    color: #222;
-                }
+        .pillar-content {
+            padding: 1rem;
+        }
 
-            .pillars-grid {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 2rem;
-                justify-content: center;
+            .pillar-content h3 {
+                font-size: 1.25rem;
+                margin-bottom: 0.75rem;
+                color: #222;
             }
 
-            .pillar-card {
-                background-color: #fff;
-                flex: 1 1 220px;
-                max-width: 260px;
-                border-radius: 8px;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-                overflow: hidden;
-                transition: transform 0.2s, box-shadow 0.2s;
+            .pillar-content p {
+                font-size: 1rem;
+                color: #555;
+                line-height: 1.4;
+            }
+
+        /* 3) TRAILER SECTION (unchanged) */
+
+        /* 4) FEATURES SECTION
+                - Card‐based, similar to personal pages
+             */
+        .features-cards {
+            background-color: #fff;
+            padding: 3rem 1rem;
+        }
+
+            .features-cards .section-title {
                 text-align: center;
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                color: #222;
             }
 
-                .pillar-card:hover {
-                    transform: translateY(-4px);
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-                }
+        .features-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
 
-            .pillar-icon {
-                background-color: #ddd;
-                height: 120px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+        .feature-card {
+            background-color: #fafafa;
+            flex: 1 1 220px;
+            max-width: 260px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+
+            .feature-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             }
 
-                .pillar-icon img {
-                    max-width: 64px;
-                    max-height: 64px;
-                }
+        .feature-icon {
+            background-color: #ddd;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-            .pillar-content {
-                padding: 1rem;
+            .feature-icon img {
+                max-width: 64px;
+                max-height: 64px;
             }
 
-                .pillar-content h3 {
-                    font-size: 1.25rem;
-                    margin-bottom: 0.75rem;
-                    color: #222;
-                }
+        .feature-content {
+            padding: 1rem;
+        }
 
-                .pillar-content p {
-                    font-size: 1rem;
-                    color: #555;
-                    line-height: 1.4;
-                }
-
-            /* 3) TRAILER SECTION (unchanged) */
-
-            /* 4) FEATURES SECTION
-           - Card‐based, similar to personal pages
-        */
-            .features-cards {
-                background-color: #fff;
-                padding: 3rem 1rem;
+            .feature-content h3 {
+                font-size: 1.25rem;
+                margin-bottom: 0.75rem;
+                color: #222;
             }
 
-                .features-cards .section-title {
-                    text-align: center;
-                    font-size: 2rem;
-                    margin-bottom: 2rem;
-                    color: #222;
-                }
-
-            .features-grid {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 2rem;
-                justify-content: center;
+            .feature-content p {
+                font-size: 1rem;
+                color: #555;
+                line-height: 1.4;
             }
-
-            .feature-card {
-                background-color: #fafafa;
-                flex: 1 1 220px;
-                max-width: 260px;
-                border-radius: 8px;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-                overflow: hidden;
-                transition: transform 0.2s, box-shadow 0.2s;
-                text-align: center;
-            }
-
-                .feature-card:hover {
-                    transform: translateY(-4px);
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-                }
-
-            .feature-icon {
-                background-color: #ddd;
-                height: 120px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-                .feature-icon img {
-                    max-width: 64px;
-                    max-height: 64px;
-                }
-
-            .feature-content {
-                padding: 1rem;
-            }
-
-                .feature-content h3 {
-                    font-size: 1.25rem;
-                    margin-bottom: 0.75rem;
-                    color: #222;
-                }
-
-                .feature-content p {
-                    font-size: 1rem;
-                    color: #555;
-                    line-height: 1.4;
-                }
 
 
         .pillars {
@@ -431,8 +370,8 @@
         }
 
             /* ───────────────────────────────────────────────────────────────────────────
-   Force the alternating pillar layout
-   ─────────────────────────────────────────────────────────────────────────── */
+        Force the alternating pillar layout
+        ─────────────────────────────────────────────────────────────────────────── */
 
             /* 1) Make sure every pillar‐item is a flex row by default */
             .pillars .pillar-item {
@@ -457,10 +396,10 @@
         }
 
 
-            .pillars .section-title {
-                text-align: center;
-                margin-bottom: 2rem;
-            }
+        .pillars .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
 
         /* Shared styles for each row */
         .pillar-item {
@@ -484,257 +423,179 @@
         }
 
 
-            /* ==============
-           RESPONSIVE
-           ============== */
-            @media (max-width: 768px) {
-                /* Pillars wrap to single column */
-                .pillars-grid, .features-grid {
-                    flex-direction: column;
-                    align-items: center;
-                }
-                /* Hero text font adjustments */
-                .hero-content h1 {
-                    font-size: 2.5rem;
-                }
-
-                .hero-content p {
-                    font-size: 1.1rem;
-                }
-            }
-    </style>
-</head>
-<body>
-    <!-- ================================
-         HEADER WITH HOVER‐ONLY DROPDOWN
-         ================================ -->
-    <header>
-        <nav class="nav">
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li class="dropdown">
-                    <a href="teams.html">Teams</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="productionteam.html">Production</a></li>
-                        <li><a href="artteam.html">Art</a></li>
-                        <li><a href="codeteam.html">Code</a></li>
-                        <li><a href="designteam.html">Design</a></li>
-                    </ul>
-                </li>
-                <li><a href="engine.html">Engine</a></li>
-                <li><a href="production.html">Production</a></li>
-                <li><a href="lore.html">Lore</a></li>
-                <li>
-                    <a href="https://github.com/MarcoDiModica/HawkEngine_Warhammer40K"
-                       target="_blank"
-                       rel="noopener">Engineson Link</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Warhammer 40K: Blood and Thunder</h1>
-                <p>Download now and conquer the evil Tyranids.</p>
-                <a href="#" class="btn">Download</a>
-            </div>
-        </section>
-        <section class="pillars">
-            <h2 class="section-title">Four Pillars of the Game</h2>
-
-            <div class="pillar-item">
-                <div class="pillar-image">
-                    <img src="icons/strategy.svg" alt="Strategic Depth Icon">
-                </div>
-                <div class="pillar-text">
-                    <h3>Strategic Depth</h3>
-                    <p>Plan your forces, manage resources, and outmaneuver enemies on the battlefield.</p>
-                </div>
-            </div>
-
-            <div class="pillar-item">
-                <div class="pillar-text">
-                    <h3>Epic Battles</h3>
-                    <p>Experience massive clashes across iconic Warhammer 40K terrain with hundreds of units on screen.</p>
-                </div>
-                <div class="pillar-image">
-                    <img src="icons/epic_battles.svg" alt="Epic Battles Icon">
-                </div>
-            </div>
-
-            <div class="pillar-item">
-                <div class="pillar-image">
-                    <img src="icons/immersion.svg" alt="Immersive Lore Icon">
-                </div>
-                <div class="pillar-text">
-                    <h3>Immersive Lore</h3>
-                    <p>Dive deep into the grimdark universe with cinematic cutscenes, voice-overs, and rich storytelling.</p>
-                </div>
-            </div>
-
-            <div class="pillar-item">
-                <div class="pillar-text">
-                    <h3>Multiplayer</h3>
-                    <p>Team up or compete with friends in quick-play skirmishes and ranked matches.</p>
-                </div>
-                <div class="pillar-image">
-                    <img src="icons/multiplayer.svg" alt="Multiplayer Icon">
-                </div>
-            </div>
-        </section>
-
-        <section id="trailer" class="trailer">
-            <div class="container trailer-container">
-                <h2>Official Trailer</h2>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/5zcJKGdb0a8"
-                            title="Game Trailer"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                </div>
-            </div>
-        </section>
-        <section class="features-cards">
-            <h2 class="section-title">Game Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <img src="icons/units.svg" alt="Hundreds of Units Icon" />
-                    </div>
-                    <div class="feature-content">
-                        <h3>Hundreds of Units</h3>
-                        <p>
-                            Command squads of Space Marines, Orks, and Tyranids—each with
-                            unique abilities and stratagems.
-                        </p>
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <img src="icons/terrain.svg" alt="Dynamic Terrain Icon" />
-                    </div>
-                    <div class="feature-content">
-                        <h3>Dynamic Terrain</h3>
-                        <p>
-                            Destroy buildings, topple trees, and alter the battlefield in
-                            real time to gain the upper hand.
-                        </p>
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <img src="icons/tech_tree.svg" alt="Tech Tree Icon" />
-                    </div>
-                    <div class="feature-content">
-                        <h3>Deep Tech Tree</h3>
-                        <p>
-                            Research advanced weapons, unlock stratagems, and customize
-                            your army’s loadout.
-                        </p>
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <img src="icons/voice_over.svg" alt="Voice‐Over Icon" />
-                    </div>
-                    <div class="feature-content">
-                        <h3>Voice‐Over & Cinematics</h3>
-                        <p>
-                            Hear iconic characters speak and watch cinematic sequences that
-                            bring the universe to life.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-logo">
-                <img src="https://via.placeholder.com/60x60?text=Logo"
-                     alt="Small Logo" />
-            </div>
-            <div class="footer-links">
-                <a href="#"><img src="icons/twitter.svg" alt="Twitter" /></a>
-                <a href="#"><img src="icons/instagram.svg" alt="Instagram" /></a>
-                <a href="#"><img src="icons/discord.svg" alt="Discord" /></a>
-            </div>
-            <div class="footer-copy">
-                &copy; 2025 Warhammer 40K: Blood and Thunder. All rights reserved.
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
-
-
-            .pillars .pillar-image img {
-                max-width: 80%;
-                margin: 0 auto 1rem;
-            }
-        }
-
-            .pillars .section-title {
-                text-align: center;
-                margin-bottom: 2rem;
-            }
-
-        /* Shared styles for each row */
-        .pillar-item {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        /* Image container */
-        .pillar-image img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        /* Text container */
-        .pillar-text {
-            flex: 1;
-        }
-
-        /* Responsive: stack on mobile */
+        /* ==============
+                RESPONSIVE
+                ============== */
         @media (max-width: 768px) {
-            .pillar-item,
-            .pillar-item.reverse {
-                flex-direction: column !important;
-                text-align: center;
+            /* Pillars wrap to single column */
+            .pillars-grid, .features-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            /* Hero text font adjustments */
+            .hero-content h1 {
+                font-size: 2.5rem;
             }
 
-            .pillar-image img {
-                max-width: 80%;
-                margin: 0 auto 1rem;
+            .hero-content p {
+                font-size: 1.1rem;
             }
         }
 
+        /* GAME PILLARS */
+        .game-pillars {
+            text-align: center;
+        }
 
-            /* ==============
-           RESPONSIVE
-           ============== */
-            @media (max-width: 768px) {
-                /* Pillars wrap to single column */
-                .pillars-grid, .features-grid {
-                    flex-direction: column;
-                    align-items: center;
-                }
-                /* Hero text font adjustments */
-                .hero-content h1 {
-                    font-size: 2.5rem;
-                }
-
-                .hero-content p {
-                    font-size: 1.1rem;
-                }
+            .game-pillars h2 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                color: #fff;
             }
+
+        .pillar-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .pillar-icon {
+            width: 64px;
+            height: 64px;
+        }
+
+            .pillar-icon.left {
+                margin-right: 1rem;
+            }
+
+            .pillar-icon.right {
+                margin-left: 1rem;
+            }
+
+        .pillar-parchment {
+            position: relative;
+            width: 60%;
+            max-width: 500px;
+        }
+
+            .pillar-parchment img {
+                width: 100%;
+                display: block;
+            }
+
+            .pillar-parchment span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 1.25rem;
+                color: #222;
+                font-weight: bold;
+            }
+
+        /* FEATURED VIDEO */
+        .featured-video {
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .video-frame {
+            display: inline-block;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+            .video-frame iframe {
+                width: 100%;
+                border: none;
+            }
+
+        /* LIBRARIES GRID */
+        .libraries {
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .library-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .lib-icon {
+            width: 64px;
+            height: 64px;
+            background: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+        }
+
+            .lib-icon img {
+                max-width: 40px;
+                max-height: 40px;
+            }
+
+        /* ───────────────────────────────────────────────────────────────────────────
+   HERO: Position logo & button over the video
+   ─────────────────────────────────────────────────────────────────────────── */
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* VIDEO stays at z-index 1 */
+        .hero-video {
+            padding: 1rem 0rem 0rem 0rem;
+            width: 100%;
+            height: auto;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-logo {
+            position: absolute;
+            top: 50%; /* vertical center */
+            left: 50%; /* horizontal center */
+            transform: translate(-50%, -50%); /* shift back by half width/height */
+            z-index: 2;
+            max-width: 40%; /* adjust to taste */
+            height: auto;
+        }
+
+        /* CENTERED DOWNLOAD BUTTON, slightly below logo */
+        .download-btn {
+            position: absolute;
+            top: calc(50% + 4rem); /* center + 4rem down */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .download-btn img {
+            width: 25%;
+        }
+
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pillar-row {
+                flex-direction: column !important;
+            }
+
+            .pillar-icon {
+                margin: 0 0 0.75rem 0 !important;
+            }
+
+            .pillar-parchment {
+                width: 90%;
+            }
+
+            .video-frame {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -744,6 +605,9 @@
     <header>
         <nav class="nav">
             <ul>
+                <a href="index.html" class="logo">
+                    <img src="assets/index/LogoCrucible.png" alt="Site Logo">
+                </a>
                 <li><a href="index.html" class="active">Home</a></li>
                 <li class="dropdown">
                     <a href="teams.html">Teams</a>
@@ -765,124 +629,45 @@
             </ul>
         </nav>
     </header>
-
     <main>
+        <!-- HERO (Frame Image + Download Button) -->
         <section class="hero">
-            <div class="hero-content">
-                <h1>Warhammer 40K: Blood and Thunder</h1>
-                <p>Download now and conquer the evil Tyranids.</p>
-                <a href="#" class="btn">Download</a>
-            </div>
-        </section>
-        <section class="pillars">
-            <h2 class="section-title">Four Pillars of the Game</h2>
+            <img src="assets/index/logo.png"
+                 alt="Warhammer 40k Logo"
+                 class="hero-logo" />
 
-            <div class="pillar-item">
-                <div class="pillar-image">
-                    <img src="icons/strategy.svg" alt="Strategic Depth Icon">
-                </div>
-                <div class="pillar-text">
-                    <h3>Strategic Depth</h3>
-                    <p>Plan your forces, manage resources, and outmaneuver enemies on the battlefield.</p>
-                </div>
-            </div>
+            <video class="herovideo" autoplay muted loop>
+                <source src="assets/index/SuperTrailer.mp4" type="video/mp4" />
+            </video>
 
-            <div class="pillar-item reverse">
-                <div class="pillar-text">
-                    <h3>Epic Battles</h3>
-                    <p>Experience massive clashes across iconic Warhammer 40K terrain with hundreds of units on screen.</p>
-                </div>
-                <div class="pillar-image">
-                    <img src="icons/epic_battles.svg" alt="Epic Battles Icon">
-                </div>
-            </div>
-
-            <div class="pillar-item">
-                <div class="pillar-image">
-                    <img src="icons/immersion.svg" alt="Immersive Lore Icon">
-                </div>
-                <div class="pillar-text">
-                    <h3>Immersive Lore</h3>
-                    <p>Dive deep into the grimdark universe with cinematic cutscenes, voice-overs, and rich storytelling.</p>
-                </div>
-            </div>
-
-            <div class="pillar-item reverse">
-                <div class="pillar-text">
-                    <h3>Multiplayer</h3>
-                    <p>Team up or compete with friends in quick-play skirmishes and ranked matches.</p>
-                </div>
-                <div class="pillar-image">
-                    <img src="icons/multiplayer.svg" alt="Multiplayer Icon">
-                </div>
-            </div>
+            <a href="link-to-download" class="btn download-btn"><img src="assets/index/download.png"/></a>
         </section>
 
-        <section id="trailer" class="trailer">
-            <div class="container trailer-container">
-                <h2>Official Trailer</h2>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/5zcJKGdb0a8"
-                            title="Game Trailer"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                </div>
-            </div>
+        <!-- GAME PILLARS (Single Composite Image) -->
+        <section class="game-pillars">
+            <img src="assets/index/game_pillars2.png"
+                 alt="Four Game Pillars"
+                 class="pillars-img"
+                 style="width: 100%">
         </section>
-        <section class="features-cards">
-            <h2 class="section-title">Game Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <img src="icons/units.svg" alt="Hundreds of Units Icon" />
-                    </div>
-                    <div class="feature-content">
-                        <h3>Hundreds of Units</h3>
-                        <p>
-                            Command squads of Space Marines, Orks, and Tyranids—each with
-                            unique abilities and stratagems.
-                        </p>
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <img src="icons/terrain.svg" alt="Dynamic Terrain Icon" />
-                    </div>
-                    <div class="feature-content">
-                        <h3>Dynamic Terrain</h3>
-                        <p>
-                            Destroy buildings, topple trees, and alter the battlefield in
-                            real time to gain the upper hand.
-                        </p>
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <img src="icons/tech_tree.svg" alt="Tech Tree Icon" />
-                    </div>
-                    <div class="feature-content">
-                        <h3>Deep Tech Tree</h3>
-                        <p>
-                            Research advanced weapons, unlock stratagems, and customize
-                            your army’s loadout.
-                        </p>
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <img src="icons/voice_over.svg" alt="Voice‐Over Icon" />
-                    </div>
-                    <div class="feature-content">
-                        <h3>Voice‐Over & Cinematics</h3>
-                        <p>
-                            Hear iconic characters speak and watch cinematic sequences that
-                            bring the universe to life.
-                        </p>
-                    </div>
-                </div>
-            </div>
+
+        <!-- FEATURED TRAILER (Frame Image + Embedded Video) -->
+        <section class="featured-video">
+            <iframe class="video-frame featured-frame" src="https://www.youtube.com/embed/5zcJKGdb0a8"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </section>
+
+        <!-- FEATURES (Single Image) -->
+        <section class="features-section">
+            <img src="images/features-composite.png"
+                 alt="Game Features"
+                 class="features-img">
         </section>
     </main>
+
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-copy">
