@@ -6,6 +6,76 @@
           content="width=device-width, initial-scale=1.0" />
     <title>Warhammer 40K: Blood and Thunder � Art Team</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Anton';
+        }
+
+        .lead-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 8px;
+            padding: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            /* new: constrain its width */
+            max-width: 240px; /* or whatever fits your design */
+            margin: 0 auto; /* center if its parent is wider */
+        }
+
+        .lead-card-content {
+            width: 100%; /* fill the card */
+            box-sizing: border-box;
+        }
+
+        .lead-photo {
+            width: 80%; /* scale the photo within the card */
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+        }
+
+        .lead-card-content h3,
+        .lead-card-content p {
+            margin: 0;
+            padding: 0;
+            /* no extra width or block styling needed */
+        }
+
+        .team-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 8px;
+            padding: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            /* new: constrain its width */
+            max-width: 240px; /* or whatever fits your design */
+            margin: 0 auto; /* center if its parent is wider */
+        }
+
+        .team-card-content {
+            width: 100%; /* fill the card */
+            box-sizing: border-box;
+        }
+
+        .team-photo {
+            width: 80%; /* scale the photo within the card */
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+        }
+
+        .team-card-content h3,
+        .team-card-content p {
+            margin: 0;
+            padding: 0;
+            /* no extra width or block styling needed */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -47,58 +117,58 @@
             <div class="container">
                 <h2 class="section-title" style="margin-top: 2rem;">Art Team Members</h2>
                 <div class="teams-grid" style="margin-top: 2rem;">
-                    <a class="team-card" href="MarcoBaldan.html" style="background-color: #e0e0e0;">
+                    <a class="team-card" href="MarcoBaldan.html">
                         <div class="team-card-content">
-                            <img src="assets/Photos/MarcoBaldan.jpg" alt="Member Photo" style="width:100%; border-radius: 4px;" />
+                            <img src="assets/Photos/Marco_B.jpg" alt="Member Photo" style="width:100%; border-radius: 4px;" />
                             <h3 style="margin-top: 1rem;">Marco Baldan</h3>
                             <p>Lead Artist</p>
                         </div>
                     </a>
-                    <a class="team-card" href="DanielBerrio.html" style="background-color: #e0e0e0;">
+                    <a class="team-card" href="DanielBerrio.html">
                         <div class="team-card-content">
-                            <img src="assets/Photos/MarcoDiModica.jpg" alt="Member Photo" style="width:100%; border-radius: 4px;" />
+                            <img src="assets/Photos/Dani.jpg" alt="Member Photo" style="width:100%; border-radius: 4px;" />
                             <h3 style="margin-top: 1rem;">Daniel Berrio</h3>
                             <p>Artist</p>
                         </div>
                     </a>
-                    <a class="team-card" href="SergiGantzer.html" style="background-color: #e0e0e0;">
+                    <a class="team-card" href="SergiGantzer.html">
                         <div class="team-card-content">
-                            <img src="assets/Photos/MarcoDiModica.jpg" alt="Member Photo" style="width:100%; border-radius: 4px;" />
+                            <img src="assets/Photos/Sergi.jpg" alt="Member Photo" style="width:100%; border-radius: 4px;" />
                             <h3 style="margin-top: 1rem;">Sergi Gantzer</h3>
                             <p>Artist</p>
                         </div>
                     </a>
-                    <a class="team-card" href="PabloLongaron.html" style="background-color: #e0e0e0;">
+                    <a class="team-card" href="PabloLongaron.html">
                         <div class="team-card-content">
-                            <img src="assets/Photos/MarcoDiModica.jpg" alt="Member Photo" style="width:100%; border-radius: 4px;" />
+                            <img src="assets/Photos/Pablo.jpg" alt="Member Photo" style="width:100%; border-radius: 4px;" />
                             <h3 style="margin-top: 1rem;">Pablo Longar&#243n</h3>
                             <p>Artist</p>
                         </div>
                     </a>
-                    <a class="team-card" href="OliverSantos.html" style="background-color: #e0e0e0;">
+                    <a class="team-card" href="OliverSantos.html">
                         <div class="team-card-content">
-                            <img src="assets/Photos/MarcoDiModica.jpg" alt="Member Photo" style="width:100%; border-radius: 4px;" />
+                            <img src="assets/Photos/Oliver.jpg" alt="Member Photo" style="width:100%; border-radius: 4px;" />
                             <h3 style="margin-top: 1rem;">Oliver Antonio Santos</h3>
                             <p>Artist</p>
                         </div>
                     </a>
-                    <a class="team-card" href="MiguelTamaño.html" style="background-color: #e0e0e0;">
+                    <a class="team-card" href="MiguelTamaño.html">
                         <div class="team-card-content">
-                            <img src="assets/Photos/MarcoDiModica.jpg" alt="Member Photo" style="width:100%; border-radius: 4px;" />
+                            <img src="assets/Photos/Miguel.jpg" alt="Member Photo" style="width:100%; border-radius: 4px;" />
                             <h3 style="margin-top: 1rem;">Miguel Tama&#0241o</h3>
                             <p>Artist</p>
                         </div>
                     </a>
-                    <a class="team-card" href="JustoTiscornia.html" style="background-color: #e0e0e0;">
+                    <a class="team-card" href="JustoTiscornia.html">
                         <div class="team-card-content">
-                            <img src="assets/Photos/MarcoDiModica.jpg" alt="Member Photo" style="width:100%; border-radius: 4px;" />
+                            <img src="assets/Photos/Justo.jpg" alt="Member Photo" style="width:100%; border-radius: 4px;" />
                             <h3 style="margin-top: 1rem;">Justo Jose Tiscornia</h3>
                             <p>Artist</p>
                         </div>
                     </a>
-                    <a class="team-card" href="YiweiYe.html" style="background-color: #e0e0e0;">
+                    <a class="team-card" href="YiweiYe.html">
                         <div class="team-card-content">
-                            <img src="assets/Photos/MarcoDiModica.jpg" alt="Member Photo" style="width:100%; border-radius: 4px;" />
+                            <img src="assets/Photos/Yiwei.jpg" alt="Member Photo" style="width:100%; border-radius: 4px;" />
                             <h3 style="margin-top: 1rem;">Yiwei Ye</h3>
                             <p>Artist</p>
                         </div>

@@ -21,6 +21,27 @@
             border-radius: 8px;
             padding: 1rem;
             transition: transform 0.2s, box-shadow 0.2s;
+            /* new: constrain its width */
+            max-width: 240px; /* or whatever fits your design */
+            margin: 0 auto; /* center if its parent is wider */
+        }
+
+        .lead-card-content {
+            width: 100%; /* fill the card */
+            box-sizing: border-box;
+        }
+
+        .lead-photo {
+            width: 80%; /* scale the photo within the card */
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+        }
+
+        .lead-card-content h3,
+        .lead-card-content p {
+            margin: 0;
+            padding: 0;
+            /* no extra width or block styling needed */
         }
     </style>
 </head>
@@ -89,8 +110,7 @@
                         </div>
                     </a>
                     <a href="MarcoDiModica.html"
-                       class="lead-card"
-                       style="background-color: #e0e0e0;">
+                       class="lead-card">
                         <div class="lead-card-content">
                             <img src="assets/Photos/Marco_D.jpg"
                                  alt="Marco Di Modica"
@@ -100,8 +120,7 @@
                         </div>
                     </a>
                     <a href="JordiTur.html"
-                       class="lead-card"
-                       style="background-color: #e0e0e0;">
+                       class="lead-card">
                         <div class="lead-card-content">
                             <img src="assets/Photos/Jordi.jpg"
                                  alt="Jordi Tur"
