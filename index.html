@@ -576,6 +576,31 @@
         .download-btn img {
             width: 25%;
         }
+        /* CSS (page-specific or at bottom of your stylesheet) */
+        .image-frame {
+            position: relative;
+            display: inline-block; /* shrink to image width */
+            width: 33%; /* or set a fixed width */
+        }
+
+            .image-frame img {
+                display: block;
+                border-radius: 4px;
+            }
+
+            .image-frame .overlay-text {
+                position: absolute;
+                top: 50%; /* center vertically */
+                left: 50%; /* center horizontally */
+                transform: translate(-50%, -50%);
+                color: #fff; /* or whatever contrast color you need */
+                font-size: 1.25rem;
+                padding: 0.5rem 1rem;
+                background: rgba(0,0,0,0.5);
+                border-radius: 4px;
+                text-align: center;
+                pointer-events: none; /* clicks pass through */
+            }
 
 
         /* Responsive */
@@ -662,9 +687,24 @@
 
         <!-- FEATURES (Single Image) -->
         <section class="features-section">
-            <img src="images/features-composite.png"
-                 alt="Game Features"
-                 class="features-img">
+            <div class="image-frame">
+                <img src="assets/index/tarjeta lider.png"
+                     alt="Game Features"
+                     class="features-img">
+                <div class="overlay-text">
+                    <h2>Game Features</h2>
+                    <p>Explore the unique features of Warhammer 40K: Blood and Thunder.</p>
+                </div>
+            </div>
+            <div class="image-frame">
+                <img src="assets/index/tarjeta miembro.png"
+                     alt="Game Features"
+                     class="features-img">
+                <div class="overlay-text">
+                    <h2>Game Features</h2>
+                    <p>Explore the unique features of Warhammer 40K: Blood and Thunder.</p>
+                </div>
+            </div>
         </section>
     </main>
 
