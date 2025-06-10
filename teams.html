@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Warhammer 40K: Blood and Thunder — Teams</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/teams.css" />
     <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
 
     <!-- page-specific overrides for teams.html only -->
@@ -16,121 +17,6 @@
         h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-        }
-
-        .group-overview {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center; /* center the two children as a group */
-            gap: 3rem; /* bigger fixed gap between image & text */
-            padding: 2rem 4rem; /* extra left/right padding */
-            margin-bottom: 3rem;
-        }
-
-            .group-overview .group-img {
-                flex: 0 1 500px; /* allow it to shrink, but aim for 500px */
-                max-width: 40%;
-            }
-
-            .group-overview .group-text {
-                flex: 0 1 500px; /* same max width for text block */
-                max-width: 100%;
-                color: #ddd;
-                line-height: 1.5;
-            }
-
-        @media (max-width: 768px) {
-            .group-overview {
-                flex-direction: column;
-                padding: 2rem 1rem;
-                gap: 1.5rem;
-                text-align: center;
-            }
-
-                .group-overview .group-img,
-                .group-overview .group-text {
-                    flex: 1 1 auto;
-                    max-width: 90vw;
-                    margin: 0 auto;
-                }
-        }
-
-
-        .teams-overview {
-            padding: 3rem 1rem;
-        }
-
-            .teams-overview .section-title {
-                margin-bottom: 0.25rem;
-            }
-
-            .teams-overview .section-subtitle {
-                margin-bottom: 2rem;
-                color: #ddd;
-            }
-
-        /* 1) Featured Team (big card) */
-        .featured-team {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 3rem;
-        }
-
-            .featured-team .team-card {
-                flex: 0 0 80%;
-                max-width: 700px;
-                padding: 2rem;
-                background: rgba(255,255,255,0.1);
-                text-align: center;
-            }
-
-                .featured-team .team-card h2 {
-                    font-size: 2rem;
-                    margin-bottom: 0.5rem;
-                }
-
-                .featured-team .team-card p {
-                    font-size: 1.1rem;
-                    line-height: 1.4;
-                }
-
-        /* 2) Small Teams Row */
-        .small-teams {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-            .small-teams .team-card {
-                flex: 1 1 200px;
-                max-width: 600px;
-                padding: 1.5rem;
-                background: rgba(255,255,255,0.1);
-                text-align: center;
-            }
-
-                .small-teams .team-card h2 {
-                    font-size: 1.5rem;
-                    margin-bottom: 0.5rem;
-                }
-
-                .small-teams .team-card p {
-                    font-size: 1rem;
-                    line-height: 1.3;
-                }
-
-        /* 3) “Learn more” pseudo-button */
-        .team-card::after {
-            content: "Learn more →";
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background: rgba(255,255,255,0.2);
-            color: #fff;
-            border-radius: 4px;
-            font-size: 0.9rem;
         }
     </style>
 </head>

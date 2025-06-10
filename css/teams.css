@@ -1,0 +1,164 @@
+﻿/* HERO SECTION */
+.hero {
+    position: relative;
+    width: 100%;
+    /* Choose height: e.g., 60vh means 60% of viewport height.
+     You can also use a fixed px height like 400px, but vh often feels more immersive. */
+    height: 60vh;
+    min-height: 300px; /* ensure not too small on short viewports */
+    background-image: url('../assets/images/production-hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; /* default text color */
+    overflow: hidden;
+}
+
+/* If you want the image set inline instead of CSS, you could omit background-image here and
+   include an <img class="hero-bg"> inside .hero with position absolute. But CSS background is simpler. */
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* semi-transparent dark overlay for contrast */
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* above overlay */
+    text-align: center;
+    padding: 0 20px; /* small horizontal padding for narrow viewports */
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Team title */
+.hero-title {
+    font-size: 2.5rem; /* adjust as needed */
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-photo-container {
+    width: 70vw; /* 70% of viewport width */
+    max-width: 600px; /* don’t grow beyond 600px (adjust as you like) */
+    aspect-ratio: 1 / 1; /* keep square */
+    margin: 20px 0; /* vertical spacing */
+    overflow: hidden;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    flex-shrink: 0; /* if inside a flex, avoid shrinking smaller than this */
+}
+
+.hero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Motto/text */
+.hero-motto {
+    font-size: 1.2rem;
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .hero {
+        height: 50vh;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-photo-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .hero-motto {
+        font-size: 1rem;
+    }
+}
+
+
+/* ---------- TEAM GRID CONTAINER ---------- */
+.team-container {
+    display: grid;
+    /* fixed-width columns of 220px. As many 220px columns as fit; wrap others */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 220px));
+    gap: 20px;
+    justify-content: center; /* center the grid within its parent */
+    margin: 0 auto 40px; /* center container and give bottom margin */
+    padding: 0 10px; /* small side padding so cards don't touch edges */
+    /* optional: cap the total width so on very large screens cards don't spread too far */
+    max-width: 1200px;
+    background: transparent; /* for clarity */
+}
+    /* Force the first child to span all grid columns, but center its own fixed width */
+    .team-container .first-card {
+        grid-column: 1 / -1; /* Span full row */
+        grid-row: 1;
+        justify-self: center; /* Center it horizontally */
+        max-width: 300px; /* Optional: make it wider if needed */
+    }
+
+/* ---------- CARD STYLING ---------- */
+.team-member {
+    grid-row: 2;
+    background-color: #000;
+    border: 2px solid #fff;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+    text-decoration: none; /* if <a>, remove underline */
+    width: 100%; /* fill its grid cell (which is 220px wide) */
+    max-width: 220px; /* ensure card width stays 220px */
+    margin: 0 auto; /* center inside cell if extra space */
+}
+
+    .team-member:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Image on top */
+    .team-member img {
+        width: 100%;
+        object-fit: cover;
+        display: block;
+    }
+/* Name and role */
+    .team-member .member-name {
+        font-size: 1.1em;
+        font-weight: bold;
+        margin: 10px 0 4px;
+    }
+
+    .team-member .member-role {
+        font-size: 0.95em;
+        margin-bottom: 10px;
+        opacity: 0.8;
+    }   
