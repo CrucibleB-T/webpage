@@ -1,0 +1,70 @@
+﻿.lore-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+/* Base card */
+.lore-card {
+    position: relative;
+    width: 40%;
+    height: 360px;
+    border: 4px solid #fff;
+    box-sizing: border-box;
+    background: #000;
+    overflow: hidden;
+    font-size: 40px;
+}
+
+    /* Large modifier—note normal hyphens and higher specificity */
+    .lore-card.lore-card--large {
+        width: 80%;
+        height: 480px;
+    }
+
+.lore-card--large .card-content {
+    top: 10px;
+    bottom: auto;
+    left: calc(40% + 20px);
+    right: 10px;
+}
+
+.lore-card--large img {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    max-width: 40%;
+    height: auto;
+    display: block;
+}
+
+    /* Image stays bottom‑left, scaled to max 40% of the card’s width */
+    .lore-card img {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        max-width: 40%;
+        height: auto;
+        display: block;
+    }
+
+    /* Text content always starts just to the right of the image */
+    .lore-card .card-content {
+        position: absolute;
+        top: 10px;
+        left: calc(40% + 20px); /* matches the image’s max‑width + its left padding */
+        right: 10px;
+        color: #fff;
+    }
+
+        .lore-card .card-content h2 {
+            margin: 0 0 8px;
+        }
+
+        .lore-card .card-content p {
+            margin: 0;
+            font-size: 1.2rem;
+            line-height: 1.2;
+        }

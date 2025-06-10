@@ -6,7 +6,19 @@
           content="width=device-width, initial-scale=1.0" />
     <title>Warhammer 40K: Blood and Thunder — Production</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/production.css" />
+    <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
     <style>
+        body {
+            font-family: 'Anton';
+        }
+
+            body p {
+                font-family: Georgia;
+            }
+            body li {
+                font-family: Georgia;
+            }
     </style>
 </head>
 <body>
@@ -14,8 +26,10 @@
     <header>
         <nav class="nav">
             <ul>
+                <a href="index.html" class="logo">
+                    <img src="assets/index/LogoCrucible.png" alt="Site Logo">
+                </a>
                 <li><a href="index.html">Home</a></li>
-
                 <li class="dropdown">
                     <a href="teams.html">Teams</a>
                     <ul class="dropdown-menu">
@@ -25,7 +39,6 @@
                         <li><a href="designteam.html">Design</a></li>
                     </ul>
                 </li>
-
                 <li><a href="engine.html">Engine</a></li>
                 <li><a href="production.html" class="active">Production</a></li>
                 <li><a href="lore.html">Lore</a></li>
@@ -40,10 +53,8 @@
     <main>
         <section class="expectations-section">
             <div class="expectations-container">
-                <div class="expectations-image">
-                </div>
-                <div class="expectations-text">
-                    <h2>Expectations</h2>
+                <h2 class="section-title">Expectations</h2>
+                <div class="container">
                     <p>
                         For this project we had the motivation to do something that met our expectations.
                         We wanted to have a deep and meaningful lore, an original weapon design with interesting dynamics
@@ -54,71 +65,204 @@
                         many of the ideas we had in mind. Above all, we had to keep in mind the times and days we needed to work on each facet that we had to work on.
                     </p>
                     <p>
-                        We started the course with an engine that was quite difficult to work with and that meant that we had to restructure many of the ideas we had in mind.
-                        Above all, we had to keep in mind the times and days we needed to work on each facet that we had to work on.
+                        Even so, the work has been more than satisfactory with the results obtained. We only had 23 students for this project. Among them, 6 Designers, 8 Artists, 8 Programmers and a Producer Manager.
                     </p>
                 </div>
             </div>
         </section>
         <section class="final-product-section">
-            <div class="final-product-container container">
-                <h2>Final Product</h2>
-                <p>
-                    For the final result we could summarise it in the following points:
-                </p>
-                <ul style="margin-left: 1rem; color: #555;">
-                    <li>Acceptable engine, with many applications and even if it has bugs it has been a lot of work to be able to make the game.</li>
-                    <li>A design adapted to the needs and limitations of the engine.</li>
-                    <li>
-                        The art has been one of the most rigorous of all the departments, as we had a great quality in the models with the need to be as simple as possible. As well as a dynamic environment and very different between them.
-                    </li>
-                </ul>
+            <div class="final-product-container">
+                <h2 class="section-title">Final Product</h2>
+                <div class="container">
+                    <p>
+                        For the final result we could summarise it in the following points:
+                    </p>
+                    <ul style="margin-left: 1rem">
+                        <li>Acceptable engine, with many applications and even if it has bugs it has been a lot of work to be able to make the game.</li>
+                        <li>A design adapted to the needs and limitations of the engine.</li>
+                        <li>
+                            The art has been one of the most rigorous of all the departments, as we had a great quality in the models with the need to be as simple as possible. As well as a dynamic environment and very different between them.
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
         <section class="process-section">
-            <div class="process-container">
-                <h2>The Process</h2>
-                <div class="process-slider">
-                    <div class="process-doc">
-                        <img src="icons/doc1.svg" alt="CD Document" />
-                        <h3>Concept Doc</h3>
-                        <p>High-level design & scope.</p>
-                    </div>
+            <h2 class="section-title">The Process</h2>
+            <div class="process-grid">
 
-                    <div class="process-doc">
-                        <img src="icons/doc2.svg" alt="WSI Document" />
-                        <h3>Work Schedule</h3>
-                        <p>Week-by-week sprint plans.</p>
+                <div class="process-card">
+                    <div class="process-content">
+                        <h3>Concept Discovery</h3>
+                        <ul style="margin-left: 1rem">
+                            <p>
+                                Possibilities available in terms of Lore, Enemies and Main Character.
+                            </p>
+                            <p>
+                                Study of the art we wanted to focus on and testing the possibilities of each one.
+                            <p>
+                            </p>
+                            <p>
+                                State of the Engine and define the most critical points to start working on.
+                            </p>
+                        </ul>
                     </div>
+                </div>
 
-                    <div class="process-doc">
-                        <img src="icons/doc3.svg" alt="WS2 Document" />
-                        <h3>Milestone Reports</h3>
-                        <p>Post-mortem & analytics.</p>
+
+                <div class="process-card">
+                    <div class="process-content">
+                        <h3>Vertical Slice 1</h3>
+                        <ul style="margin-left: 1rem">
+                            <p>
+                                First visualisations of the Player and Hormagaunt.
+                            </p>
+                            <p>
+                                Initial GDD.
+                            </p>
+                            <p>
+                                Engine development & Character locomotion.
+                            </p>
+                        </ul>
                     </div>
+                </div>
 
-                    <div class="process-arrow">&#9654;</div>
+                <div class="process-card">
+                    <div class="process-content">
+                        <h3>Vertical Slice 2</h3>
+                        <ul style="margin-left: 1rem">
+                            <p>
+                                Amount of Assets needed.
+                            </p>
+                            <p>
+                                Environment development.
+                            </p>
+                            <p>
+                                Fix important bugs like Skeletal Animation.
+                            </p>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="process-card">
+                    <div class="process-content">
+                        <h3>Vertical Slice 3</h3>
+                        <ul style="margin-left: 1rem">
+                            <p>
+                                Interactive objects, pick ups, UI.
+                            </p>
+                            <p>
+                                Enemy attack, player attack, movement and animations.
+                            </p>
+                            <p>
+                                Narrative, missions, audio playlists and VFX.
+                            </p>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="process-card">
+                    <div class="process-content">
+                        <h3>Alpha</h3>
+                        <ul style="margin-left: 1rem">
+                            <p>
+                                Enemy behaviours and how they interact with the player.
+                            </p>
+                            <p>
+                                Redesigned environments and very noticeable improvements throughout level 1.
+                            </p>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="process-card">
+                    <div class="process-content">
+                        <h3>Beta</h3>
+                        <ul style="margin-left: 1rem">
+                            <p>
+                                Weapon specific development and finishing touches to enemies.
+                            </p>
+                            <p>
+                                Exhaustive documentation of improvements and bugs in the game.
+                            </p>
+                            <p>
+                                Organisation of a Playtesting in order to receive feedback.
+                            </p>
+                        </ul>
+                    </div>
+                </div>
+                <div class="process-card">
+                    <div class="process-content">
+                        <h3>Gold</h3>
+                        <ul style="margin-left: 1rem">
+                            <p>
+                                Finishing touches on the Player animations.
+                            </p>
+                            <p>
+                                Finished weapons and skills.
+                            </p>
+                            <p>
+                                Implementation of VFX and SFX.
+                            </p>
+                            <p>
+                                Attempt to obtain a Render with lights and shadows.
+                            </p>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
         <section class="tools-section">
             <div class="tools-container">
-                <h2>Tools &amp; Middleware</h2>
-                <p style="text-align: center; margin-bottom: 1.5rem; color: #555;">
+                <h2 class="section-title">Tools &amp; Middleware</h2>
+                <p style="text-align: center; margin-bottom: 1.5rem">
                     We leveraged best-in-class tools to streamline our pipeline:
                 </p>
                 <div class="tools-grid">
-                    <div class="tool-icon">
-                        <img src="icons/perforce.svg" alt="Perforce" />
+                    <div class="tool-card">
+                        <div class="tool-content">
+                            <img src="assets/production/hack.png" alt="Slack" />
+                        </div>
                     </div>
-                    <div class="tool-icon">
-                        <img src="icons/jenkins.svg" alt="Jenkins" />
+                    <div class="tool-card">
+                        <div class="tool-content">
+                            <img src="assets/production/drive.png" alt="Slack" />
+                        </div>
                     </div>
-                    <div class="tool-icon">
-                        <img src="icons/shotgun.svg" alt="Shotgun" />
+                    <div class="tool-card">
+                        <div class="tool-content">
+                            <img src="assets/production/docs.png" alt="Slack" />
+                        </div>
                     </div>
-                    <div class="tool-icon">
-                        <img src="icons/slack.svg" alt="Slack" />
+                    <div class="tool-card">
+                        <div class="tool-content">
+                            <img src="assets/production/sheets.png" alt="Slack" />
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-content">
+                            <img src="assets/production/discord.png" alt="Slack" />
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-content">
+                            <img src="assets/production/canva.png" alt="Slack" />
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-content">
+                            <img src="assets/production/capcut.png" alt="Slack" />
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-content">
+                            <img src="assets/production/blender.png" alt="Slack" />
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-content">
+                            <img src="assets/production/visual.png" alt="Slack" />
+                        </div>
                     </div>
                 </div>
             </div>
