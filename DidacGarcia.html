@@ -4,180 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0" />
-    <title>Warhammer 40K: Blood &amp; Thunder — Name Surname</title>
+    <title>Warhammer 40K: Blood &amp; Thunder — Didac Garcia</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/personal.css" />
+    <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
     <style>
-    /* ───────────────────────────────────────────────────────────────────────────
-       If you want, you can move these into css/style.css.
-       They cover the “profile page” specific sections.
-    ─────────────────────────────────────────────────────────────────────────── */
-    /* 1) Profile Header (top box with photo, name, role, links) */
-    .profile-header {
-      background-color: #ffffff;
-      padding: 2rem 1rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      margin-bottom: 2rem;
-    }
-    .profile-header .profile-container {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .profile-photo {
-      flex: 0 0 150px;
-      width: 150px;
-      height: 150px;
-      background-color: #ddd; /* fallback color */
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .profile-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .profile-info {
-      flex: 1 1 300px;
-    }
-    .profile-info h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    .profile-info p.role {
-      font-size: 1.1rem;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-    .profile-links a {
-      display: inline-block;
-      margin-right: 0.75rem;
-      color: #007bff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .profile-links a:hover {
-      color: #0056b3;
-    }
-
-    /* 2) Tasks Done Section (grid of “task cards” or a dropdown if you prefer) */
-    .tasks-section {
-      background-color: #fafafa;
-      padding: 2rem 1rem;
-      margin-bottom: 2rem;
-    }
-    .tasks-section .section-title {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: #222;
-    }
-    .tasks-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-    }
-    .task-card {
-      background-color: #fff;
-      border-radius: 8px;
-      width: 200px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .task-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }
-    .task-card .task-icon {
-      background-color: #ddd; /* fallback if no icon image */
-      width: 100%;
-      height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .task-card .task-icon img {
-      max-width: 80px;
-      max-height: 80px;
-    }
-    .task-card .task-content {
-      padding: 1rem;
-      text-align: center;
-    }
-    .task-card .task-content h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: #222;
-    }
-    .task-card .task-content p {
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    /* If you prefer a collapsible dropdown for each task instead of a card:
-       .task-dropdown { … }  You can replace .tasks-grid/.task-card with that. */
-
-    /* 3) Experience & Competencies Section */
-    .experience-section {
-      background-color: #fff;
-      padding: 2rem 1rem;
-      margin-bottom: 2rem;
-    }
-    .experience-section .section-title {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: #222;
-    }
-    .experience-list {
-      list-style: none;
-      max-width: 800px;
-      margin: 0 auto;
-      padding-left: 1rem;
-    }
-    .experience-list li {
-      position: relative;
-      margin-bottom: 1rem;
-      padding-left: 1.5rem;
-      color: #444;
-    }
-    .experience-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-size: 1.2rem;
-      color: #007bff;
-    }
-
-    /* 4) Responsive adjustments for profile page sections */
-    @media (max-width: 768px) {
-      .profile-header .profile-container {
-        flex-direction: column;
-        text-align: center;
-      }
-      .tasks-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-      .experience-list {
-        padding-left: 0.5rem;
-      }
-    }
-  </style>
+        body {
+            font-family: 'Anton';
+        }
+    </style>
 </head>
 <body>
+    <div class="bg-smoke"></div>
     <header>
         <nav class="nav">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <a href="index.html" class="logo">
+                    <img src="assets/index/LogoCrucible.png" alt="Site Logo">
+                </a>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li class="dropdown">
                     <a href="teams.html">Teams</a>
                     <ul class="dropdown-menu">
@@ -187,7 +32,6 @@
                         <li><a href="designteam.html">Design</a></li>
                     </ul>
                 </li>
-
                 <li><a href="engine.html">Engine</a></li>
                 <li><a href="production.html">Production</a></li>
                 <li><a href="lore.html">Lore</a></li>
@@ -202,16 +46,12 @@
     <section class="profile-header">
         <div class="container profile-container">
             <div class="profile-photo">
-                <img src="https://via.placeholder.com/150" alt="Name Surname Photo" />
+                <img src="assets/Photos/Didac.jpg" alt="Name Surname Photo" />
             </div>
             <div class="profile-info">
                 <h1>Dídac García</h1>
-
-                <p class="role">Role Title</p>
                 <div class="profile-links">
-                    <a href="mailto:name@example.com">Email</a>
-                    <a href="https://linkedin.com/in/namesurname" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/username" target="_blank">GitHub</a>
+                    <a href="https://github.com/D1dii" target="_blank">GitHub</a>
                 </div>
                 <div class="profile-text">
                     <p>
@@ -224,10 +64,12 @@
     <section class="aboutme-section">
         <div class="container">
             <h2 class="section-title">About me</h2>
-            <p>
-                I am a young video game developer with a strong passion for unique mechanics and game design.
-                I’ve worked on several personal projects, but I still feel that I can create much better and more interesting games, as I’m always eager to learn.
-            </p>
+            <div class="aboutme-container">
+                <p>
+                    I am a young video game developer with a strong passion for unique mechanics and game design.
+                    I’ve worked on several personal projects, but I still feel that I can create much better and more interesting games, as I’m always eager to learn.
+                </p>
+            </div>
         </div>
     </section>
     <section class="tasks-section">
@@ -235,130 +77,103 @@
             <h2 class="section-title">Tasks &amp; Responsibilities</h2>
             <div class="tasks-grid">
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
+                    <div class="task-content-no-img">
                         <h3>Creation of the Skeletal Animation Component</h3>
                         <ul style="margin-left: 1rem; color:#555">
-                            <li>
+                            <p>
                                 I made the main implementation of Skeletal Animation using the Assimp Library.
-                            </li>
+                            </p>
                         </ul>
                     </div>
                 </div>
 
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
+                    <div class="task-content-no-img">
                         <h3>Player Animations implementation:</h3>
                         <ul style="margin-left: 1rem; color:#555">
-                            <li>
+                            <p>
                                 I implemented a big part of the Player Animations such as Running, Shooting Running, Reload, Change Weapon, Black Rage, etc.
-                            </li>
+                            </p>
                         </ul>
                     </div>
                 </div>
 
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
+                    <div class="task-content-no-img">
                         <h3>Player Weapon Programming</h3>
                         <ul style="margin-left: 1rem; color:#555">
-                            <li>
+                            <p>
                                 I programmed the core mechanics of shooting with all 3 different weapons and the correct behaviour of the bullets.
-                            </li>
+                            </p>
                         </ul>
                     </div>
                 </div>
 
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
+                    <div class="task-content-no-img">
                         <h3>Engine Improvements</h3>
                         <ul style="margin-left: 1rem; color:#555">
-                            <li> Play/Stop/Pause implementation. </li>
-                            <li> Load Scene function. </li>
-                            <li> Create of the Awake function on the Monobehaviour loop. </li>
-                            <li> Creation of the Raycast within the physics. </li>
+                            <p> Play/Stop/Pause implementation. </p>
+                            <p> Load Scene function. </p>
+                            <p> Create of the Awake function on the Monobehaviour loop. </p>
+                            <p> Creation of the Raycast within the physics. </p>
                         </ul>
                     </div>
                 </div>
 
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
+                    <div class="task-content-no-img">
                         <h3>Powerup Interface</h3>
                         <ul style="margin-left: 1rem; color:#555">
-                            <li> I created the powerup interface for the designers to implement all the necessary powerups. </li>
+                            <p> I created the powerup interface for the designers to implement all the necessary powerups. </p>
                         </ul>
                     </div>
                 </div>
 
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
+                    <div class="task-content-no-img">
                         <h3>VFX Implementation</h3>
                         <ul style="margin-left: 1rem; color:#555">
-                            <li> I implemented some of the player VFX such as the Medicae Stimm VFX. </li>
+                            <p> I implemented some of the player VFX such as the Medicae Stimm VFX. </p>
                         </ul>
                     </div>
                 </div>
 
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
+                    <div class="task-content-no-img">
                         <h3>Rework Audio Engine</h3>
                         <ul style="margin-left: 1rem; color:#555">
-                            <li> I reworked the Audio Engine in order to use FMOD instead of the previous library we were using. </li>
+                            <p> I reworked the Audio Engine in order to use FMOD instead of the previous library we were using. </p>
                         </ul>
                     </div>
                 </div>
 
                 <div class="task-card">
                     <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
+                        <img src="assets/personal/Didac/spawners.gif" alt="Icon" />
                     </div>
                     <div class="task-content">
                         <h3>Checkpoints</h3>
                         <ul style="margin-left: 1rem; color:#555">
-                            <li> I created the checkpoints that were going to be placed throughout the levels. </li>
+                            <p> I created the checkpoints that were going to be placed throughout the levels. </p>
                         </ul>
                     </div>
                 </div>
 
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
+                    <div class="task-content-no-img">
                         <h3>Enemy Spawners</h3>
                         <ul style="margin-left: 1rem; color:#555">
-                            <li> I created the Enemy Spawners that can be placed throughout the levels. They are customizable and the designers can choose which enemy to spawn, the spawn rate and the maximum number of enemies that can be spawned. </li>
+                            <p> I created the Enemy Spawners that can be placed throughout the levels. They are customizable and the designers can choose which enemy to spawn, the spawn rate and the maximum number of enemies that can be spawned. </p>
                         </ul>
                     </div>
                 </div>
 
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
+                    <div class="task-content-no-img">
                         <h3>Explosive Barrels</h3>
                         <ul style="margin-left: 1rem; color:#555">
-                            <li> I created the explosive barrels, a destroyable object that explodes when shooted and damages the player and enemies. It also destroys some of the walls near them. </li>
+                            <p> I created the explosive barrels, a destroyable object that explodes when shooted and damages the player and enemies. It also destroys some of the walls near them. </p>
                         </ul>
                     </div>
                 </div>
@@ -369,17 +184,15 @@
         <div class="container">
             <h2 class="section-title">Programs &amp; Tools Used</h2>
             <ul class="programs-list">
-                <ul style="margin-left: 1rem; color:#555">
                     <li>GitHub Desktop</li>
                     <li>Visual Studio 2022</li>
                     <li>Visual Studio Code</li>
-                </ul>
             </ul>
         </div>
     </section>
     <section class="experience-section">
         <div class="container">
-            <h2 class="section-title">Experience &amp; Competencies</h2>
+            <h2 class="section-title">Experience &amp; Competences</h2>
             <ul class="experience-list">
                 <li>Developer of Beyond the Shutter.</li>
                 <li>Developer of Out of Jail.</li>
@@ -389,15 +202,6 @@
     </section>
     <footer class="footer">
         <div class="container footer-container">
-            <div class="footer-logo">
-                <img src="https://via.placeholder.com/60x60?text=Logo"
-                     alt="Small Logo" />
-            </div>
-            <div class="footer-links">
-                <a href="#"><img src="icons/twitter.svg" alt="Twitter" /></a>
-                <a href="#"><img src="icons/instagram.svg" alt="Instagram" /></a>
-                <a href="#"><img src="icons/discord.svg" alt="Discord" /></a>
-            </div>
             <div class="footer-copy">
                 &copy; 2025 Warhammer 40K: Blood and Thunder. All rights reserved.
             </div>

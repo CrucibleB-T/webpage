@@ -38,6 +38,8 @@ body {
         z-index: 2;
     }
 
+
+
 img, video, svg, picture {
     mix-blend-mode: normal !important;
 }
@@ -92,6 +94,15 @@ header::before {
     pointer-events: none;
 }
 
+.bg-smoke {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/index/smoke.gif') center/cover no-repeat;
+    z-index: 1;
+}
 .nav {
     height: 100%;
     display: flex;
@@ -196,6 +207,7 @@ header::before {
     transform: translateY(-10px);
     transition: all 0.3s ease;
     z-index: 1001;
+    list-style-type: none;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -374,7 +386,6 @@ body {
 .pillars-img,
 .features-img {
     width: 600px;
-    max-width: 90vw;
     height: auto;
     display: inline-block;
 }

@@ -4,178 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0" />
-    <title>Warhammer 40K: Blood &amp; Thunder — Name Surname</title>
+    <title>Warhammer 40K: Blood &amp; Thunder — Jordi Tur</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/personal.css" />
+    <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
     <style>
-    /* ───────────────────────────────────────────────────────────────────────────
-       If you want, you can move these into css/style.css.
-       They cover the “profile page” specific sections.
-    ─────────────────────────────────────────────────────────────────────────── */
-    /* 1) Profile Header (top box with photo, name, role, links) */
-    .profile-header {
-      background-color: #ffffff;
-      padding: 2rem 1rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      margin-bottom: 2rem;
-    }
-    .profile-header .profile-container {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .profile-photo {
-      flex: 0 0 150px;
-      width: 150px;
-      height: 150px;
-      background-color: #ddd; /* fallback color */
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .profile-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .profile-info {
-      flex: 1 1 300px;
-    }
-    .profile-info h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    .profile-info p.role {
-      font-size: 1.1rem;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-    .profile-links a {
-      display: inline-block;
-      margin-right: 0.75rem;
-      color: #007bff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .profile-links a:hover {
-      color: #0056b3;
-    }
-
-    /* 2) Tasks Done Section (grid of “task cards” or a dropdown if you prefer) */
-    .tasks-section {
-      background-color: #fafafa;
-      padding: 2rem 1rem;
-      margin-bottom: 2rem;
-    }
-    .tasks-section .section-title {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: #222;
-    }
-    .tasks-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-    }
-    .task-card {
-      background-color: #fff;
-      border-radius: 8px;
-      width: 200px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .task-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }
-    .task-card .task-icon {
-      background-color: #ddd; /* fallback if no icon image */
-      width: 100%;
-      height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .task-card .task-icon img {
-      max-width: 80px;
-      max-height: 80px;
-    }
-    .task-card .task-content {
-      padding: 1rem;
-      text-align: center;
-    }
-    .task-card .task-content h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: #222;
-    }
-    .task-card .task-content p {
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    /* If you prefer a collapsible dropdown for each task instead of a card:
-       .task-dropdown { … }  You can replace .tasks-grid/.task-card with that. */
-
-    /* 3) Experience & Competencies Section */
-    .experience-section {
-      background-color: #fff;
-      padding: 2rem 1rem;
-      margin-bottom: 2rem;
-    }
-    .experience-section .section-title {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: #222;
-    }
-    .experience-list {
-      list-style: none;
-      max-width: 800px;
-      margin: 0 auto;
-      padding-left: 1rem;
-    }
-    .experience-list li {
-      position: relative;
-      margin-bottom: 1rem;
-      padding-left: 1.5rem;
-      color: #444;
-    }
-    .experience-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-size: 1.2rem;
-      color: #007bff;
-    }
-
-    /* 4) Responsive adjustments for profile page sections */
-    @media (max-width: 768px) {
-      .profile-header .profile-container {
-        flex-direction: column;
-        text-align: center;
-      }
-      .tasks-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-      .experience-list {
-        padding-left: 0.5rem;
-      }
-    }
-  </style>
+        body {
+            font-family: 'Anton';
+        }
+    </style>
 </head>
 <body>
+    <div class="bg-smoke"></div>
     <header>
         <nav class="nav">
+            <a href="index.html" class="logo">
+                <img src="assets/index/LogoCrucible.png" alt="Site Logo">
+            </a>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
@@ -202,16 +47,13 @@
     <section class="profile-header">
         <div class="container profile-container">
             <div class="profile-photo">
-                <img src="https://via.placeholder.com/150" alt="Name Surname Photo" />
+                <img src="assets/Photos/Jordi.jpg" alt="Name Surname Photo" />
             </div>
             <div class="profile-info">
                 <h1>Jordi Tur</h1>
-
-                <p class="role">Role Title</p>
                 <div class="profile-links">
-                    <a href="mailto:name@example.com">Email</a>
-                    <a href="https://linkedin.com/in/namesurname" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/username" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/jordi-tur" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/Jordopol" target="_blank">GitHub</a>
                 </div>
                 <div class="profile-text">
                     <p>
@@ -225,17 +67,19 @@
     <section class="aboutme-section">
         <div class="container">
             <h2 class="section-title">About me</h2>
-            <p>
-                Since I was very young, I have been fascinated by the worlds books and video games are capable of portraying, and how they do it. This fascination sparked my interest in design and storytelling.
-            </p>
-            <p>
-                After spending a year studying physics and math, I decided to pursue this degree in order to follow this passion, and to learn how to effectively translate concepts,
-                narratives and characters into the medium of video games.
-            </p>
-            <p>
-                My experience as a lead designer has provided me with a deeper understanding of the responsibilities involved in guiding a team,
-                allowing me to develop valuable skills in organization and strategic planning.
-            </p>
+            <div class="aboutme-container">
+                <p>
+                    Since I was very young, I have been fascinated by the worlds books and video games are capable of portraying, and how they do it. This fascination sparked my interest in design and storytelling.
+                </p>
+                <p>
+                    After spending a year studying physics and math, I decided to pursue this degree in order to follow this passion, and to learn how to effectively translate concepts,
+                    narratives and characters into the medium of video games.
+                </p>
+                <p>
+                    My experience as a lead designer has provided me with a deeper understanding of the responsibilities involved in guiding a team,
+                    allowing me to develop valuable skills in organization and strategic planning.
+                </p>
+            </div>
         </div>
     </section>
     <section class="tasks-section">
@@ -243,12 +87,9 @@
             <h2 class="section-title">Tasks &amp; Responsibilities</h2>
             <div class="tasks-grid">
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
+                    <div class="task-content-no-img">
                         <h3>Team Management and Communication</h3>
-                        <ul style="margin-left: 1rem; color:#555">
+                        <ul style="margin-left: 1rem">
                             <li> Establishing the general objectives of the team. </li>
                             <li> Conducting weekly meetings and writing reports on performance and collaboration. </li>
                             <li> Identifying the strengths and assessing the performance of each member and assigning tasks accordingly each sprint. </li>
@@ -260,26 +101,17 @@
 
                 <div class="task-card">
                     <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
+                        <img src="assets/personal/Jordi/GDDTitle.png" alt="Icon" />
                     </div>
                     <div class="task-content">
                         <h3>GDD</h3>
-                        <ul style="margin-left: 1rem; color:#555">
-                            <li> Ensuring consistency and cleanliness in format and content. </li>
-                            <li> Per-sprint revisions and general modifications.</li>
-                            <li> Document hierarchy and flow design. </li>
-                            <li> Redaction of UI, Enemies & References sections. </li>
-                        </ul>
                     </div>
                 </div>
 
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
+                    <div class="task-content-no-img">
                         <h3>General Design</h3>
-                        <ul style="margin-left: 1rem; color:#555">
+                        <ul style="margin-left: 1rem">
                             <li> Addressing the stipulated core game pillars and designing accordingly. </li>
                             <li> Enemy (xenos) species selection. </li>
                             <li> General revising: player, narrative, story, UI, progression, level design… </li>
@@ -289,11 +121,11 @@
 
                 <div class="task-card">
                     <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
+                        <img src="assets/personal/Jordi/TWarriorBehaviorTree.png" alt="Icon" />
                     </div>
                     <div class="task-content">
                         <h3>Enemy Behavior Design (reduced content in-game)</h3>
-                        <ul style="margin-left: 1rem; color:#555">
+                        <ul style="margin-left: 1rem; ">
                             <li> Designed the behavior and stats of every enemy type. </li>
                             <li> Provided references for physical aspect, SFX & VFX. </li>
                             <li> Defined the narrative background of the Tyranids. </li>
@@ -303,11 +135,11 @@
 
                 <div class="task-card">
                     <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
+                        <img src="assets/personal/Jordi/BossMovesData.png" alt="Icon" />
                     </div>
                     <div class="task-content">
                         <h3>Boss Behavior Design (reduced content in-game)</h3>
-                        <ul style="margin-left: 1rem; color:#555">
+                        <ul style="margin-left: 1rem; ">
                             <li> Designed the behavior and stats of the Mawloc, the final boss. </li>
                             <li> Provided references for physical aspect, SFX & VFX. </li>
                         </ul>
@@ -316,11 +148,11 @@
 
                 <div class="task-card">
                     <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
+                        <img src="assets/personal/Jordi/MawlocPhase2.gif" alt="Icon" />
                     </div>
                     <div class="task-content">
                         <h3>Mawloc Preliminary Behavior Coding</h3>
-                        <ul style="margin-left: 1rem; color:#555">
+                        <ul style="margin-left: 1rem; ">
                             <li> Programmed the phase flow, transitions and attack logic of the final boss. </li>
                             <li> Added various VFX to the boss behavior through code. </li>
                         </ul>
@@ -328,12 +160,9 @@
                 </div>
 
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
+                    <div class="task-content-no-img">
                         <h3>General Enemy and Boss Testing/QA</h3>
-                        <ul style="margin-left: 1rem; color:#555">
+                        <ul style="margin-left: 1rem; ">
                             <li> Balanced enemy stats following enemy placement and definitive content. </li>
                             <li> Adjusted collider types, sizes and prefabs. </li>
                             <li> Reduced unattainable content. </li>
@@ -342,24 +171,18 @@
                 </div>
 
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
+                    <div class="task-content-no-img">
                         <h3>Starting Cinematic Definition and Design</h3>
-                        <ul style="margin-left: 1rem; color:#555">
+                        <ul style="margin-left: 1rem; ">
                             <li> Established the shots, pacing and visual appeal of the starting cinematic of the game. </li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
+                    <div class="task-content-no-img">
                         <h3>General Testing/QA</h3>
-                        <ul style="margin-left: 1rem; color:#555">
+                        <ul style="margin-left: 1rem; ">
                             <li> Conducted overall testing on the game as a whole, detecting improvements and issues </li>
                         </ul>
                     </div>
@@ -367,11 +190,11 @@
 
                 <div class="task-card">
                     <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
+                        <img src="assets/personal/Jordi/WebPageMainScreenWireframe.jpg" alt="Icon" />
                     </div>
                     <div class="task-content">
                         <h3>Web Page Rough Design</h3>
-                        <ul style="margin-left: 1rem; color:#555">
+                        <ul style="margin-left: 1rem; ">
                             <li> Created pen & paper wireframes of the various web page’s screens. </li>
                             <li> Addressed the art requirements for the web’s design. </li>
                         </ul>
@@ -379,15 +202,15 @@
                 </div>
 
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
+                    <div class="task-content-no-img">
                         <h3>Web Page Coding</h3>
-                        <ul style="margin-left: 1rem; color:#555">
+                        <ul style="margin-left: 1rem; ">
                             <li> Implemented content and information in the webpage. </li>
                         </ul>
                     </div>
+                </div>
+                <div class="frame-container">
+                    <iframe src="https://docs.google.com/document/d/e/2PACX-1vS2td-7PsXSA8XKhTALHmr30HBsy_AW6-lRv6QoNf8MLwRzAZL1admxXt0Ai8ZtgVektVyvN1ZXUL7G/pub?embedded=true"></iframe>
                 </div>
             </div>
         </div>
@@ -396,21 +219,19 @@
         <div class="container">
             <h2 class="section-title">Programs &amp; Tools Used</h2>
             <ul class="programs-list">
-                <ul style="margin-left: 1rem; color:#555">
-                    <li>GitHub</li>
-                    <li>Visual Studio 2022</li>
-                    <li>Figma</li>
-                    <li>Google Docs</li>
-                    <li>Google Spreadsheets</li>
-                    <li>HacknPlan</li>
-                    <li>Discord</li>
-                </ul>
+                <li>GitHub</li>
+                <li>Visual Studio 2022</li>
+                <li>Figma</li>
+                <li>Google Docs</li>
+                <li>Google Spreadsheets</li>
+                <li>HacknPlan</li>
+                <li>Discord</li>
             </ul>
         </div>
     </section>
     <section class="experience-section">
         <div class="container">
-            <h2 class="section-title">Experience &amp; Competencies</h2>
+            <h2 class="section-title">Experience &amp; Competences</h2>
             <ul class="experience-list">
                 <li>Designer, programmer and translator of Sewing Life, awarded with Best Art at Level Up Game Jam 2024.</li>
                 <li>Github, C++, C#, Unity.</li>
@@ -420,22 +241,8 @@
             </ul>
         </div>
     </section>
-    <div style="display:flex; flex-direction: row; align-items: center; justify-content: center;">
-        <div class="frame-container">
-            <iframe src="https://docs.google.com/document/d/e/2PACX-1vSCYcqIpahogunLP6UST7a-rA4MX_ms5y0lHtyG9kpRW026pCapKkYy16nN1USlBir-AUT4wg_RS1tN/pub?embedded=true"></iframe>
-        </div>
-    </div>
     <footer class="footer">
         <div class="container footer-container">
-            <div class="footer-logo">
-                <img src="https://via.placeholder.com/60x60?text=Logo"
-                     alt="Small Logo" />
-            </div>
-            <div class="footer-links">
-                <a href="#"><img src="icons/twitter.svg" alt="Twitter" /></a>
-                <a href="#"><img src="icons/instagram.svg" alt="Instagram" /></a>
-                <a href="#"><img src="icons/discord.svg" alt="Discord" /></a>
-            </div>
             <div class="footer-copy">
                 &copy; 2025 Warhammer 40K: Blood and Thunder. All rights reserved.
             </div>

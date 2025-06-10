@@ -4,180 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0" />
-    <title>Warhammer 40K: Blood &amp; Thunder — Name Surname</title>
+    <title>Warhammer 40K: Blood &amp; Thunder — Oliver Santos</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/personal.css" />
+    <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
     <style>
-    /* ───────────────────────────────────────────────────────────────────────────
-       If you want, you can move these into css/style.css.
-       They cover the “profile page” specific sections.
-    ─────────────────────────────────────────────────────────────────────────── */
-    /* 1) Profile Header (top box with photo, name, role, links) */
-    .profile-header {
-      background-color: #ffffff;
-      padding: 2rem 1rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      margin-bottom: 2rem;
-    }
-    .profile-header .profile-container {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .profile-photo {
-      flex: 0 0 150px;
-      width: 150px;
-      height: 150px;
-      background-color: #ddd; /* fallback color */
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .profile-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .profile-info {
-      flex: 1 1 300px;
-    }
-    .profile-info h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    .profile-info p.role {
-      font-size: 1.1rem;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-    .profile-links a {
-      display: inline-block;
-      margin-right: 0.75rem;
-      color: #007bff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .profile-links a:hover {
-      color: #0056b3;
-    }
-
-    /* 2) Tasks Done Section (grid of “task cards” or a dropdown if you prefer) */
-    .tasks-section {
-      background-color: #fafafa;
-      padding: 2rem 1rem;
-      margin-bottom: 2rem;
-    }
-    .tasks-section .section-title {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: #222;
-    }
-    .tasks-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-    }
-    .task-card {
-      background-color: #fff;
-      border-radius: 8px;
-      width: 200px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .task-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }
-    .task-card .task-icon {
-      background-color: #ddd; /* fallback if no icon image */
-      width: 100%;
-      height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .task-card .task-icon img {
-      max-width: 80px;
-      max-height: 80px;
-    }
-    .task-card .task-content {
-      padding: 1rem;
-      text-align: center;
-    }
-    .task-card .task-content h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: #222;
-    }
-    .task-card .task-content p {
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    /* If you prefer a collapsible dropdown for each task instead of a card:
-       .task-dropdown { … }  You can replace .tasks-grid/.task-card with that. */
-
-    /* 3) Experience & Competencies Section */
-    .experience-section {
-      background-color: #fff;
-      padding: 2rem 1rem;
-      margin-bottom: 2rem;
-    }
-    .experience-section .section-title {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: #222;
-    }
-    .experience-list {
-      list-style: none;
-      max-width: 800px;
-      margin: 0 auto;
-      padding-left: 1rem;
-    }
-    .experience-list li {
-      position: relative;
-      margin-bottom: 1rem;
-      padding-left: 1.5rem;
-      color: #444;
-    }
-    .experience-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-size: 1.2rem;
-      color: #007bff;
-    }
-
-    /* 4) Responsive adjustments for profile page sections */
-    @media (max-width: 768px) {
-      .profile-header .profile-container {
-        flex-direction: column;
-        text-align: center;
-      }
-      .tasks-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-      .experience-list {
-        padding-left: 0.5rem;
-      }
-    }
-  </style>
+        body {
+            font-family: 'Anton';
+        }
+    </style>
 </head>
 <body>
+    <div class="bg-smoke"></div>
     <header>
         <nav class="nav">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <a href="index.html" class="logo">
+                    <img src="assets/index/LogoCrucible.png" alt="Site Logo">
+                </a>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li class="dropdown">
                     <a href="teams.html">Teams</a>
                     <ul class="dropdown-menu">
@@ -187,7 +32,6 @@
                         <li><a href="designteam.html">Design</a></li>
                     </ul>
                 </li>
-
                 <li><a href="engine.html">Engine</a></li>
                 <li><a href="production.html">Production</a></li>
                 <li><a href="lore.html">Lore</a></li>
@@ -202,16 +46,14 @@
     <section class="profile-header">
         <div class="container profile-container">
             <div class="profile-photo">
-                <img src="https://via.placeholder.com/150" alt="Name Surname Photo" />
+                <img src="assets/Photos/Oliver.jpg" alt="Name Surname Photo" />
             </div>
             <div class="profile-info">
                 <h1>Oliver Santos</h1>
-
-                <p class="role">Role Title</p>
                 <div class="profile-links">
-                    <a href="mailto:name@example.com">Email</a>
-                    <a href="https://linkedin.com/in/namesurname" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/username" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/oliver-santos-459265240/" target="_blank">LinkedIn</a>
+                    <a href="https://sketchfab.com/hesnaiper" target="_blank">Sketchfab</a>
+                    <a href="https://www.artstation.com/esnaiper9" target="_blank">Artstation</a>
                 </div>
                 <div class="profile-text">
                     <p>
@@ -225,10 +67,12 @@
     <section class="aboutme-section">
         <div class="container">
             <h2 class="section-title">About me</h2>
-            <p>
-                For me videogames were a great part of my life, and still are and I always wanted to dedicate my life to doing anything in this medium.
-                Until recently doing this career I discovered my love for 3d art, and I put all my effort into getting better by my own means, using of course the basis the upc gave me.
-            </p>
+            <div class="aboutme-container">
+                <p>
+                    For me videogames were a great part of my life, and still are and I always wanted to dedicate my life to doing anything in this medium.
+                    Until recently doing this career I discovered my love for 3d art, and I put all my effort into getting better by my own means, using of course the basis the upc gave me.
+                </p>
+            </div>
         </div>
     </section>
     <section class="tasks-section">
@@ -306,7 +150,7 @@
     </section>
     <section class="experience-section">
         <div class="container">
-            <h2 class="section-title">Experience &amp; Competencies</h2>
+            <h2 class="section-title">Experience &amp; Competences</h2>
             <ul class="experience-list">
                 <li>From my experience gained in game jams and university assignments I can defend myself in unity. And have good understanding of 3d art from practicing by myself.</li>
                 <li>Sculpting organic elements or characters</li>
@@ -327,15 +171,6 @@
     </section>
     <footer class="footer">
         <div class="container footer-container">
-            <div class="footer-logo">
-                <img src="https://via.placeholder.com/60x60?text=Logo"
-                     alt="Small Logo" />
-            </div>
-            <div class="footer-links">
-                <a href="#"><img src="icons/twitter.svg" alt="Twitter" /></a>
-                <a href="#"><img src="icons/instagram.svg" alt="Instagram" /></a>
-                <a href="#"><img src="icons/discord.svg" alt="Discord" /></a>
-            </div>
             <div class="footer-copy">
                 &copy; 2025 Warhammer 40K: Blood and Thunder. All rights reserved.
             </div>

@@ -4,180 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0" />
-    <title>Warhammer 40K: Blood &amp; Thunder — Name Surname</title>
+    <title>Warhammer 40K: Blood &amp; Thunder — Joan Marques</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/personal.css" />
+    <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
     <style>
-    /* ───────────────────────────────────────────────────────────────────────────
-       If you want, you can move these into css/style.css.
-       They cover the “profile page” specific sections.
-    ─────────────────────────────────────────────────────────────────────────── */
-    /* 1) Profile Header (top box with photo, name, role, links) */
-    .profile-header {
-      background-color: #ffffff;
-      padding: 2rem 1rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      margin-bottom: 2rem;
-    }
-    .profile-header .profile-container {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .profile-photo {
-      flex: 0 0 150px;
-      width: 150px;
-      height: 150px;
-      background-color: #ddd; /* fallback color */
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .profile-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .profile-info {
-      flex: 1 1 300px;
-    }
-    .profile-info h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    .profile-info p.role {
-      font-size: 1.1rem;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-    .profile-links a {
-      display: inline-block;
-      margin-right: 0.75rem;
-      color: #007bff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .profile-links a:hover {
-      color: #0056b3;
-    }
-
-    /* 2) Tasks Done Section (grid of “task cards” or a dropdown if you prefer) */
-    .tasks-section {
-      background-color: #fafafa;
-      padding: 2rem 1rem;
-      margin-bottom: 2rem;
-    }
-    .tasks-section .section-title {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: #222;
-    }
-    .tasks-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-    }
-    .task-card {
-      background-color: #fff;
-      border-radius: 8px;
-      width: 200px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .task-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }
-    .task-card .task-icon {
-      background-color: #ddd; /* fallback if no icon image */
-      width: 100%;
-      height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .task-card .task-icon img {
-      max-width: 80px;
-      max-height: 80px;
-    }
-    .task-card .task-content {
-      padding: 1rem;
-      text-align: center;
-    }
-    .task-card .task-content h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: #222;
-    }
-    .task-card .task-content p {
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    /* If you prefer a collapsible dropdown for each task instead of a card:
-       .task-dropdown { … }  You can replace .tasks-grid/.task-card with that. */
-
-    /* 3) Experience & Competencies Section */
-    .experience-section {
-      background-color: #fff;
-      padding: 2rem 1rem;
-      margin-bottom: 2rem;
-    }
-    .experience-section .section-title {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: #222;
-    }
-    .experience-list {
-      list-style: none;
-      max-width: 800px;
-      margin: 0 auto;
-      padding-left: 1rem;
-    }
-    .experience-list li {
-      position: relative;
-      margin-bottom: 1rem;
-      padding-left: 1.5rem;
-      color: #444;
-    }
-    .experience-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-size: 1.2rem;
-      color: #007bff;
-    }
-
-    /* 4) Responsive adjustments for profile page sections */
-    @media (max-width: 768px) {
-      .profile-header .profile-container {
-        flex-direction: column;
-        text-align: center;
-      }
-      .tasks-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-      .experience-list {
-        padding-left: 0.5rem;
-      }
-    }
-  </style>
+        body {
+            font-family: 'Anton';
+        }
+    </style>
 </head>
 <body>
+    <div class="bg-smoke"></div>
     <header>
         <nav class="nav">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <a href="index.html" class="logo">
+                    <img src="assets/index/LogoCrucible.png" alt="Site Logo">
+                </a>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li class="dropdown">
                     <a href="teams.html">Teams</a>
                     <ul class="dropdown-menu">
@@ -187,7 +32,6 @@
                         <li><a href="designteam.html">Design</a></li>
                     </ul>
                 </li>
-
                 <li><a href="engine.html">Engine</a></li>
                 <li><a href="production.html">Production</a></li>
                 <li><a href="lore.html">Lore</a></li>
@@ -202,16 +46,13 @@
     <section class="profile-header">
         <div class="container profile-container">
             <div class="profile-photo">
-                <img src="https://via.placeholder.com/150" alt="Name Surname Photo" />
+                <img src="assets/Photos/Joan.jpg" alt="Name Surname Photo" />
             </div>
             <div class="profile-info">
                 <h1>Joan Marquès</h1>
-
-                <p class="role">Role Title</p>
                 <div class="profile-links">
-                    <a href="mailto:name@example.com">Email</a>
-                    <a href="https://linkedin.com/in/namesurname" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/username" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/joanmarquesbesses" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/joanmarquesbesses" target="_blank">GitHub</a>
                 </div>
                 <div class="profile-text">
                     <p>
@@ -225,23 +66,25 @@
     <section class="aboutme-section">
         <div class="container">
             <h2 class="section-title">About me</h2>
-            <p>
-                Video games have been a constant in my life since I was a child. They’ve always been there, sparking my curiosity about how they’re made.
-                After working at sea for six years, I decided to change course and dedicate myself to what truly drives me: game development.
-            </p>
-            <p>
-                I began my training with a higher education program in Multiplatform Application Development with a specialization in video games,
-                where I discovered my passion for programming. I loved spending hours experimenting with new ideas and seeing how the code transformed into visual results inside the game.
-                After finishing the program, I knew I wanted to keep learning, so I continued my studies at university.
-            </p>
-            <p>
-                Over the years, I’ve worked with different programming languages and explored areas such as graphics programming with OpenGL, custom engine development, using engines like Unity,
-                Unreal and Godot, code optimization, system architecture, multithreading, and UI design for both editors and games.
-            </p>
-            <p>
-                I get along very well with the people I work with and always try to offer help whenever I can, fostering a positive and productive environment.
-                My goal is to keep evolving as a programmer and contribute my experience to projects that combine creativity, technology, and a shared passion for video games.
-            </p>
+            <div class="aboutme-container">
+                <p>
+                    Video games have been a constant in my life since I was a child. They’ve always been there, sparking my curiosity about how they’re made.
+                    After working at sea for six years, I decided to change course and dedicate myself to what truly drives me: game development.
+                </p>
+                <p>
+                    I began my training with a higher education program in Multiplatform Application Development with a specialization in video games,
+                    where I discovered my passion for programming. I loved spending hours experimenting with new ideas and seeing how the code transformed into visual results inside the game.
+                    After finishing the program, I knew I wanted to keep learning, so I continued my studies at university.
+                </p>
+                <p>
+                    Over the years, I’ve worked with different programming languages and explored areas such as graphics programming with OpenGL, custom engine development, using engines like Unity,
+                    Unreal and Godot, code optimization, system architecture, multithreading, and UI design for both editors and games.
+                </p>
+                <p>
+                    I get along very well with the people I work with and always try to offer help whenever I can, fostering a positive and productive environment.
+                    My goal is to keep evolving as a programmer and contribute my experience to projects that combine creativity, technology, and a shared passion for video games.
+                </p>
+            </div>
         </div>
     </section>
     <section class="tasks-section">
@@ -249,86 +92,62 @@
             <h2 class="section-title">Tasks &amp; Responsibilities</h2>
             <div class="tasks-grid">
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
-                        <h3>Vertical Slice 1</h3>
-                        <ul style="margin-left: 1rem; color:#555">
-                            <li>Full migration to Modern OpenGL using shaders.</li>
-                            <li>Performance improvement and fix of visual bugs (textures and grid rendering).</li>
-                            <li>Rewrote ModelImporter and mesh/material loading functions.</li>
-                            <li>Imported and reviewed artistic models (coordination with the art team).</li>
-                            <li>Implemented player camera in C#.</li>
-                            <li>Fixed blending and rendering issues.</li>
-                            <li>Prepared the milestone delivery and fixed last-minute bugs.</li>
-                        </ul>
+                    <div class="task-content-no-img">
+                        <h3>Migrated the rendering system from immediate mode to Modern OpenGL using shaders.</h3>
                     </div>
                 </div>
 
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
-                        <h3>Vertical Slice 2</h3>
-                        <ul style="margin-left: 1rem; color:#555">
-                            <li>Designed and implemented a custom UI system (components: UICanvas, UITransform, UIImage, UIButton).</li>
-                            <li>UI adapted to resolution using orthographic projection.</li>
-                            <li>Created a fully functional and interactive main menu and HUD.</li>
-                            <li>Developed click detection scripts and dynamic health/weapon updates.</li>
-                            <li>Implemented basic enemy AI (detection, chase, shooting).</li>
-                        </ul>
+                    <div class="task-content-no-img">
+                        <h3>Rework ModelImporter materials and meshes</h3>
                     </div>
                 </div>
 
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
-                        <h3>Vertical Slice 3</h3>
-                        <ul style="margin-left: 1rem; color:#555">
-                            <li>Developed Build Mode for clean release versions.</li>
-                            <li>Performance optimization using OptickCore and profiling.</li>
-                            <li>Assisted with bugs in scene loading.</li>
-                            <li>Fixed texture loading errors.</li>
-                            <li>Created final scenes (menu, victory, defeat).</li>
-                            <li>Integrated all features into levels provided by the environment team.</li>
-                            <li>Prepared and compiled the Release version.</li>
-                        </ul>
+                    <div class="task-content-no-img">
+                        <h3>Artist models test and imported to the engine</h3>
                     </div>
                 </div>
 
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
-                        <h3>Alpha</h3>
-                        <ul style="margin-left: 1rem; color:#555">
-                            <li>Developed ResourceManager for efficient asset handling.</li>
-                            <li>Reduced loading times and memory usage via binary serialization.</li>
-                            <li>Adapted the serialization system to work with the ResourceManager.</li>
-                            <li>Solved asset and material conflicts from Blender exports.</li>
-                            <li>Implemented system to clean up unused resources.</li>
-                            <li>Actively participated in bug fixing and Release preparation.</li>
-                        </ul>
+                    <div class="task-content-no-img">
+                        <h3>Designed and implemented a custom UI system (components: UICanvas, UITransform, UIImage, UIButton)</h3>
                     </div>
                 </div>
 
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
+                    <div class="task-content-no-img">
+                        <h3>Developed Build Mode for clean release versions</h3>
                     </div>
-                    <div class="task-content">
-                        <h3>Beta</h3>
-                        <ul style="margin-left: 1rem; color:#555">
-                            <li>Initial tests of instanced rendering (parallel engine branch). </li>
-                            <li>Fixed crash caused by FBX rig import.</li>
-                            <li>Reduced memory usage from 9 GB to 6 GB by cleaning unused assets.</li>
-                            <li>Fixed shared materials in enemies.</li>
-                        </ul>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-content-no-img">
+                        <h3>Performance optimization using OptickCore and profiling</h3>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-content-no-img">
+                        <h3>Developed ResourceManager for efficient asset handling</h3>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-content-no-img">
+                        <h3>Reduced loading times and memory usage via binary serialization</h3>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-content-no-img">
+                        <h3>Assets compression</h3>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-content-no-img">
+                        <h3>Actively participated in bug fixing and Release preparation</h3>
                     </div>
                 </div>
             </div>
@@ -338,19 +157,17 @@
         <div class="container">
             <h2 class="section-title">Programs &amp; Tools Used</h2>
             <ul class="programs-list">
-                <ul style="margin-left: 1rem; color:#555">
-                    <li>GitHub</li>
-                    <li>Visual Studio 2022</li>
-                    <li>Google Docs</li>
-                    <li>HacknPlan</li>
-                    <li>Discord</li>
-                </ul>
+                <li>GitHub</li>
+                <li>Visual Studio 2022</li>
+                <li>Google Docs</li>
+                <li>HacknPlan</li>
+                <li>Discord</li>
             </ul>
         </div>
     </section>
     <section class="experience-section">
         <div class="container">
-            <h2 class="section-title">Experience &amp; Competencies</h2>
+            <h2 class="section-title">Experience &amp; Competences</h2>
             <ul class="experience-list">
                 <li>Github, C, C++, C#, Java, JavaScript, Unity, Unreal, Godot, OpenGL, SDL, ImGUI.</li>
                 <li>Maya, Adobe Substance Painter, Adobe Photoshop, Adobe Illustrator.</li>
@@ -362,15 +179,6 @@
     </section>
     <footer class="footer">
         <div class="container footer-container">
-            <div class="footer-logo">
-                <img src="https://via.placeholder.com/60x60?text=Logo"
-                     alt="Small Logo" />
-            </div>
-            <div class="footer-links">
-                <a href="#"><img src="icons/twitter.svg" alt="Twitter" /></a>
-                <a href="#"><img src="icons/instagram.svg" alt="Instagram" /></a>
-                <a href="#"><img src="icons/discord.svg" alt="Discord" /></a>
-            </div>
             <div class="footer-copy">
                 &copy; 2025 Warhammer 40K: Blood and Thunder. All rights reserved.
             </div>

@@ -4,180 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0" />
-    <title>Warhammer 40K: Blood &amp; Thunder — Name Surname</title>
+    <title>Warhammer 40K: Blood &amp; Thunder — Biel Liñan</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/personal.css" />
+    <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
     <style>
-    /* ───────────────────────────────────────────────────────────────────────────
-       If you want, you can move these into css/style.css.
-       They cover the “profile page” specific sections.
-    ─────────────────────────────────────────────────────────────────────────── */
-    /* 1) Profile Header (top box with photo, name, role, links) */
-    .profile-header {
-      background-color: #ffffff;
-      padding: 2rem 1rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      margin-bottom: 2rem;
-    }
-    .profile-header .profile-container {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .profile-photo {
-      flex: 0 0 150px;
-      width: 150px;
-      height: 150px;
-      background-color: #ddd; /* fallback color */
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .profile-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .profile-info {
-      flex: 1 1 300px;
-    }
-    .profile-info h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    .profile-info p.role {
-      font-size: 1.1rem;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-    .profile-links a {
-      display: inline-block;
-      margin-right: 0.75rem;
-      color: #007bff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .profile-links a:hover {
-      color: #0056b3;
-    }
-
-    /* 2) Tasks Done Section (grid of “task cards” or a dropdown if you prefer) */
-    .tasks-section {
-      background-color: #fafafa;
-      padding: 2rem 1rem;
-      margin-bottom: 2rem;
-    }
-    .tasks-section .section-title {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: #222;
-    }
-    .tasks-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-    }
-    .task-card {
-      background-color: #fff;
-      border-radius: 8px;
-      width: 200px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .task-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }
-    .task-card .task-icon {
-      background-color: #ddd; /* fallback if no icon image */
-      width: 100%;
-      height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .task-card .task-icon img {
-      max-width: 80px;
-      max-height: 80px;
-    }
-    .task-card .task-content {
-      padding: 1rem;
-      text-align: center;
-    }
-    .task-card .task-content h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: #222;
-    }
-    .task-card .task-content p {
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    /* If you prefer a collapsible dropdown for each task instead of a card:
-       .task-dropdown { … }  You can replace .tasks-grid/.task-card with that. */
-
-    /* 3) Experience & Competencies Section */
-    .experience-section {
-      background-color: #fff;
-      padding: 2rem 1rem;
-      margin-bottom: 2rem;
-    }
-    .experience-section .section-title {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: #222;
-    }
-    .experience-list {
-      list-style: none;
-      max-width: 800px;
-      margin: 0 auto;
-      padding-left: 1rem;
-    }
-    .experience-list li {
-      position: relative;
-      margin-bottom: 1rem;
-      padding-left: 1.5rem;
-      color: #444;
-    }
-    .experience-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-size: 1.2rem;
-      color: #007bff;
-    }
-
-    /* 4) Responsive adjustments for profile page sections */
-    @media (max-width: 768px) {
-      .profile-header .profile-container {
-        flex-direction: column;
-        text-align: center;
-      }
-      .tasks-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-      .experience-list {
-        padding-left: 0.5rem;
-      }
-    }
-  </style>
+        body {
+            font-family: 'Anton';
+        }
+    </style>
 </head>
 <body>
+    <div class="bg-smoke"></div>
     <header>
         <nav class="nav">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <a href="index.html" class="logo">
+                    <img src="assets/index/LogoCrucible.png" alt="Site Logo">
+                </a>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li class="dropdown">
                     <a href="teams.html">Teams</a>
                     <ul class="dropdown-menu">
@@ -187,7 +32,6 @@
                         <li><a href="designteam.html" class="active">Design</a></li>
                     </ul>
                 </li>
-
                 <li><a href="engine.html">Engine</a></li>
                 <li><a href="production.html">Production</a></li>
                 <li><a href="lore.html">Lore</a></li>
@@ -202,16 +46,14 @@
     <section class="profile-header">
         <div class="container profile-container">
             <div class="profile-photo">
-                <img src="https://via.placeholder.com/150" alt="Name Surname Photo" />
+                <img src="assets/Photos/Biel.jpg" alt="Name Surname Photo" />
             </div>
             <div class="profile-info">
                 <h1>Biel Liñán</h1>
-
-                <p class="role">Role Title</p>
                 <div class="profile-links">
-                    <a href="mailto:name@example.com">Email</a>
-                    <a href="https://linkedin.com/in/namesurname" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/username" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/biel-li&#241&#225n-garc&#237a-08661a310/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
+" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/Drauguer" target="_blank">GitHub</a>
                 </div>
                 <div class="profile-text">
                     <p>
@@ -224,10 +66,12 @@
     <section class="aboutme-section">
         <div class="container">
             <h2 class="section-title">About me</h2>
-            <p>
-                Since I can remember I loved building societies, stories and scenarios for different stories and now I would like to develop such scenarios into enjoyable experiences.
-                I have always appreciated narrative driven experiences, I really enjoy reading books that make me feel invested in the story, I would like to transmit that to players.
-            </p>
+            <div class="aboutme-container">
+                <p>
+                    Since I can remember I loved building societies, stories and scenarios for different stories and now I would like to develop such scenarios into enjoyable experiences.
+                    I have always appreciated narrative driven experiences, I really enjoy reading books that make me feel invested in the story, I would like to transmit that to players.
+                </p>
+            </div>
         </div>
     </section>
     <section class="tasks-section">
@@ -236,62 +80,56 @@
             <div class="tasks-grid">
                 <div class="task-card">
                     <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
+                        <img src="assets/personal/Biel/PaperLevelDesign2.png" alt="Icon" />
                     </div>
                     <div class="task-content">
                         <h3>Main Level Designer</h3>
                         <ul style="margin-left: 1rem; color:#555">
-                            <li> All the core design of the levels was mainly done by me.</li>
+                            <p> All the core design of the levels was mainly done by me.</p>
                         </ul>
                     </div>
                 </div>
 
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
+                    <div class="task-content-no-img">
                         <h3>Environment Mechanics</h3>
                         <ul style="margin-left: 1rem; color:#555">
-                            <li> I designed part of the environmental mechanics, such as explosive barrels and the horde mechanics.</li>
+                            <p> I designed part of the environmental mechanics, such as explosive barrels and the horde mechanics.</p>
                         </ul>
                     </div>
                 </div>
 
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
+                    <div class="task-content-no-img">
                         <h3>Partial Camera Design</h3>
                         <ul style="margin-left: 1rem; color:#555">
-                            <li> The first ideas for how the camera should be were designed</li>
+                            <p> The first ideas for how the camera should be were designed</p>
                         </ul>
                     </div>
                 </div>
 
                 <div class="task-card">
                     <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
+                        <img src="assets/personal/Biel/lvl1_capt_4.PNG" alt="Icon" />
                     </div>
                     <div class="task-content">
                         <h3>Blocking</h3>
                         <ul style="margin-left: 1rem; color:#555">
-                            <li> All the level blockings that were used as reference</li>
+                            <p> All the level blockings that were used as reference</p>
                         </ul>
                     </div>
                 </div>
 
                 <div class="task-card">
-                    <div class="task-icon">
-                        <img src="https://via.placeholder.com/64" alt="Icon" />
-                    </div>
-                    <div class="task-content">
+                    <div class="task-content-no-img">
                         <h3>QA/UX Tasks</h3>
                         <ul style="margin-left: 1rem; color:#555">
-                            <li> Playing the game and trying to iterate design as necessary.</li>
+                            <p> Playing the game and trying to iterate design as necessary.</p>
                         </ul>
                     </div>
+                </div>
+                <div class="frame-container">
+                    <iframe src="https://docs.google.com/document/d/e/2PACX-1vS2td-7PsXSA8XKhTALHmr30HBsy_AW6-lRv6QoNf8MLwRzAZL1admxXt0Ai8ZtgVektVyvN1ZXUL7G/pub?embedded=true"></iframe>
                 </div>
             </div>
         </div>
@@ -314,23 +152,16 @@
     </section>
     <section class="experience-section">
         <div class="container">
-            <h2 class="section-title">Experience &amp; Competencies</h2>
+            <h2 class="section-title">Experience &amp; Competences</h2>
             <ul class="experience-list">
-                <li></li>
+                <li>
+                    CITM Gamejam: https://drauguer42.itch.io/let-me-sleep
+                </li>
             </ul>
         </div>
     </section>
     <footer class="footer">
         <div class="container footer-container">
-            <div class="footer-logo">
-                <img src="https://via.placeholder.com/60x60?text=Logo"
-                     alt="Small Logo" />
-            </div>
-            <div class="footer-links">
-                <a href="#"><img src="icons/twitter.svg" alt="Twitter" /></a>
-                <a href="#"><img src="icons/instagram.svg" alt="Instagram" /></a>
-                <a href="#"><img src="icons/discord.svg" alt="Discord" /></a>
-            </div>
             <div class="footer-copy">
                 &copy; 2025 Warhammer 40K: Blood and Thunder. All rights reserved.
             </div>
